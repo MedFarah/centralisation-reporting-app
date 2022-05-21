@@ -1,0 +1,119 @@
+<div class="row"> <div class="col-lg-6">
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Injection de fichier de rejet</h6>
+    </div>
+    <div class="card-body">
+<form method="post" enctype="multipart/form-data" action="/">
+    <div class="row">  
+      <div class=" col-md-offset-1 col-md-8">  
+          
+      <label for="profileImage">Upload File</label>  
+          <input formControlName="profileImage" class="form-control" type="file" (change)="selectFile($event)">   
+      </div>  
+      </div> 
+      <br>
+      <button  (click)="upload()"  [disabled]="!selectedFiles" class="btn btn-primary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-flag"></i>
+        </span>
+        <span class="text">Submit</span>
+      </button>
+      <div *ngIf="message" class="alert alert-success" role="alert">{{ message }}</div>
+    <div *ngIf="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</div>
+    </form> 
+</div>
+</div>
+</div>
+        <div class="col-lg-6">
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Rapport Rejets (nombre)</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{nbrRejets}}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              
+        </div>
+</div>
+<br>
+
+<!-- datatable [dtOptions]="dtOptions" class="row-border hover"> -->
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">REJETS de type 910 : Rapport Operation Devise  </h6>
+  </div>
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table table-bordered" *ngIf="rapports" datatable [dtOptions]="dtOptions" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th>Numero Declaration</th>
+                      <th>Date Operation</th>
+                      <th>Num Identifiant Client</th>
+
+                      <th>Code Erreur CORP</th>
+                      <th>Description Erreur Corps</th>
+
+                      <th>Code Erreur Entete</th>
+                      <th>Description Erreur Entete</th>
+
+                      <th>Code Erreur Fin</th>
+                      <th>Description Erreur Fin</th>
+                      
+                      
+                  </tr>
+              </thead>
+              <tfoot>
+                  <tr>
+                    <th>Numero Declaration</th>
+                    <th>Date Operation</th>
+                    <th>Num Identifiant Client</th>
+
+                    <th>Code Erreur CORP</th>
+                    <th>Description Erreur Corps</th>
+
+                    <th>Code Erreur Entete</th>
+                    <th>Description Erreur Entete</th>
+
+                    <th>Code Erreur Fin</th>
+                    <th>Description Erreur Fin</th>
+                  </tr>
+              </tfoot>
+              <tbody>
+                  <tr *ngFor="let rapport of rapports">
+                    <td>{{ rapport.numeroDeclaration }}</td>
+                    <td>{{ rapport.dateOperation | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ rapport.numIdentifiantClient }}</td>
+
+                    <td *ngFor="let p of rapport.codeErreurRapports">{{p.codeErreur}}</td>
+                    <td *ngFor="let p of rapport.codeErreurRapports"> {{ p.motif}}</td>
+
+                    <td *ngFor="let p of rapport.entete.codeErreurRapports">{{p.codeErreur}}</td>
+                    <td *ngFor="let p of rapport.entete.codeErreurRapports"> {{ p.motif}}</td>
+
+                    <td *ngFor="let p of rapport.fin.codeErreurRapports ">{{p.codeErreur ?? "my value is null"}}</td>
+                    <td *ngFor="let p of rapport.fin.codeErreurRapports"> {{ p.motif ?? "my value is null"}}</td>
+
+                   
+                  
+                  </tr>
+                  
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+ 
