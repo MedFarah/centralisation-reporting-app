@@ -34,7 +34,7 @@ export interface RapportPM {
     numeroTelex: string;
     adresseEmail: string;
     adresseWebPM: string;
-    fin?: Fin;
+    fin: Fin;
     codeErreurRapports?: Array<CodeErreurRapport>;
 
 }

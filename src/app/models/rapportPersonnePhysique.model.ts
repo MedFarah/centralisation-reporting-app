@@ -31,6 +31,6 @@ export interface RapportPP {
     numeroFax: string;
     numeroTelex: string;
     adresseEmail: string;
-    fin?: Fin;
+    fin: Fin;
     codeErreurRapports?: Array<CodeErreurRapport>;
 }
