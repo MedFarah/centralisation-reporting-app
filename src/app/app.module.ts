@@ -10,6 +10,10 @@ import { RapportPPRejetComponent } from './rapport-pp-rejet/rapport-pp-rejet.com
 import { RapportRejetService } from './services/rapport-rejet.service';
 import { RouterModule } from '@angular/router';
 import { RapportPMRejetComponent } from './rapport-pmrejet/rapport-pmrejet.component';
+import { CodeErreurListComponent } from './codeErreurBCT/code-erreur-list/code-erreur-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CodeErreurAjouterComponent } from './codeErreurBCT/code-erreur-ajouter/code-erreur-ajouter.component';
+import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifier/code-erreur-modifier.component';
 
 
 @NgModule({
@@ -17,14 +21,18 @@ import { RapportPMRejetComponent } from './rapport-pmrejet/rapport-pmrejet.compo
     AppComponent,
     RapportRejetComponent,
     RapportPPRejetComponent,
-    RapportPMRejetComponent
+    RapportPMRejetComponent,
+    CodeErreurListComponent,
+    CodeErreurAjouterComponent,
+    CodeErreurModifierComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [RapportRejetService],
   bootstrap: [AppComponent]

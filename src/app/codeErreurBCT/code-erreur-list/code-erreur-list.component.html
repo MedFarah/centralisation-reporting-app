@@ -1,0 +1,92 @@
+
+
+
+<div class="card shadow ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Injection fichier code d'erreur BCT</h6>
+    </div>
+<div class="card-body">
+    <form method="post" enctype="multipart/form-data" action="/">
+        <div class="row">  
+          <div class=" col-md-offset-1 col-md-8">  
+              
+          <label for="profileImage">Upload File</label>  
+              <input  class="form-control" type="file" (change)="selectFile($event)">   
+          </div>  
+          </div> 
+          <br>
+          <button  (click)="upload()"  [disabled]="!selectedFiles" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-flag"></i>
+            </span>
+            <span class="text">Submit</span>
+          </button>
+          <div *ngIf="message" class="alert alert-success" role="alert">{{ message }}</div>
+        <div *ngIf="errorMsg" class="alert alert-danger" role="alert">{{ errorMsg }}</div>
+        </form> 
+    </div>
+
+</div>
+<br>
+    <div class="card shadow mb-4">
+        <div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" [routerLink]="['/rejet/codeErreurAjout']">Ajouter Code</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table table-bordered" *ngIf="codeErreurBCT" datatable [dtOptions]="dtOptions" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th>Code Erreur</th>
+                      <th>Motif</th>
+                   <th></th>
+                      
+                      
+                  </tr>
+              </thead>
+              <tfoot>
+                  <tr>
+                    <th>Code Erreur</th>
+                    <th>Motif</th>
+                    <th></th>
+                  </tr>
+              </tfoot>
+              <tbody>
+                  <tr *ngFor="let code of codeErreurBCT">
+                    <td>{{ code.codeErreur }}</td>
+                    <td>{{ code.description}}</td>
+                    
+                    <td>
+                        <div class="row">
+                        <button class="btn btn-danger btn-sm col-md-6" (click)="DeleteCodeErreur(code.codeErreur)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+
+                        <button class="btn btn-warning btn-circle btn-sm col-md-6" (click)="UpdateCodeErreur(code.codeErreur)">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </button>
+                    </div>
+                    </td>
+                   
+                  
+                  </tr>
+                  
+              </tbody>
+          </table>
+      </div>
+  </div>

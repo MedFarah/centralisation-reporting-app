@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ajouter code d'erreur BCT</h6>
+    </div>
+<div class="card-body">
+<form [formGroup]="UpdateCodeFormgroup" (ngSubmit)="updateCodeErreur()">
+    <div class="form-group">
+                            <label>Code Erreur</label>
+                            <input type="text" class="form-control" formControlName="codeErreur" [(ngModel)]="codeErreurBCT.codeErreur" readonly>
+                           <span class="text-danger" *ngIf="(UpdateCodeFormgroup.controls['codeErreur'].touched &&
+                           UpdateCodeFormgroup.controls['codeErreur'].errors) && 
+                           UpdateCodeFormgroup.controls['codeErreur'].errors!['required']">
+                                Code Erreur est obligatoire
+                            </span> 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" formControlName="description" [ngModel]="codeErreurBCT.description">
+                           <span class="text-danger" *ngIf="(UpdateCodeFormgroup.controls['description'].touched &&
+                           UpdateCodeFormgroup.controls['description'].errors) && 
+                           UpdateCodeFormgroup.controls['description'].errors!['required']">
+                                Description est obligatoire
+                            </span> 
+                        </div>
+                        <div class="row">
+                        <div class="form-group ">
+                            <button [disabled]="!UpdateCodeFormgroup.valid" type="submit" class="btn btn-success">
+                                Modifier
+                            </button>
+                            </div>
+                            
+                    </div>
+</form>
+</div>
+</div>
+</div>
