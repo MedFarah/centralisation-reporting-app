@@ -1,0 +1,355 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ajouter Rapport opération devise</h6>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="ajoutRapportODFormGroup" (ngSubmit)="ajouterRapportOD()">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Entete:
+                        </div>
+                        <div class="card-body" formGroupName="entete">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <input type="text" class="form-control" formControlName="ndecl">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('entete.ndecl')!.touched &&
+                                    ajoutRapportODFormGroup.get('entete.ndecl')!.errors) ">
+                                        Numéro Déclaration LigneEntete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr</label>
+                                    <input type="text" class="form-control" formControlName="ktenr">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('entete.ktenr')!.touched &&
+                                    ajoutRapportODFormGroup.get('entete.ktenr')!.errors) ">
+                                        code enregistrement pour Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label>kte Entete</label>
+                                    <input type="text" class="form-control" formControlName="kte">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('entete.kte')!.touched &&
+                                    ajoutRapportODFormGroup.get('entete.kte')!.errors) ">
+                                        kte Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>ddecl Entete</label>
+                                    <input type="date" class="form-control" formControlName="ddecl">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('entete.ddecl')!.touched &&
+                                    ajoutRapportODFormGroup.get('entete.ddecl')!.errors) ">
+                                        ddecl Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>kmdecl Entete</label>
+                                    <input type="text" class="form-control" formControlName="kmdecl">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('entete.kmdecl')!.touched &&
+                                    ajoutRapportODFormGroup.get('entete.kmdecl')!.errors) ">
+                                        kmdecl Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>demiss Entete</label>
+                                    <input type="date" class="form-control" formControlName="demiss">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('entete.demiss')!.touched &&
+                                    ajoutRapportODFormGroup.get('entete.demiss')!.errors) ">
+                                        demiss Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numéro Déclaration</label>
+                            <input type="text" class="form-control" formControlName="numeroDeclaration">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['numeroDeclaration'].touched &&
+                           ajoutRapportODFormGroup.controls['numeroDeclaration'].errors) && 
+                           ajoutRapportODFormGroup.controls['numeroDeclaration'].errors!['required']">
+                                Numero Declaration est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Enregistrement</label>
+                            <input type="text" class="form-control" formControlName="codeEnregistrement">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['codeEnregistrement'].touched &&
+                           ajoutRapportODFormGroup.controls['codeEnregistrement'].errors) && 
+                           ajoutRapportODFormGroup.controls['codeEnregistrement'].errors!['required']">
+                                Code Enregistrement est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Operation</label>
+                            <input type="text" class="form-control" formControlName="codeOperation">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['codeOperation'].touched &&
+                           ajoutRapportODFormGroup.controls['codeOperation'].errors) && 
+                           ajoutRapportODFormGroup.controls['codeOperation'].errors!['required']">
+                                Code Operation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type Identifiant Client</label>
+                            <input type="text" class="form-control" formControlName="typeIdentifiantClient">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['typeIdentifiantClient'].touched &&
+                           ajoutRapportODFormGroup.controls['typeIdentifiantClient'].errors) && 
+                           ajoutRapportODFormGroup.controls['typeIdentifiantClient'].errors!['required']">
+                                Type Identifiant Client est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>numéro Identifiant Client</label>
+                        <input type="text" class="form-control" formControlName="numIdentifiantClient">
+                        <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['numIdentifiantClient'].touched &&
+                           ajoutRapportODFormGroup.controls['numIdentifiantClient'].errors) && 
+                           ajoutRapportODFormGroup.controls['numIdentifiantClient'].errors!['required']">
+                            Numéro Identifiant Client est obligatoire
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Agence Declarant</label>
+                            <input type="text" class="form-control" formControlName="codeAgenceDeclarant">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['codeAgenceDeclarant'].touched &&
+                           ajoutRapportODFormGroup.controls['codeAgenceDeclarant'].errors) && 
+                           ajoutRapportODFormGroup.controls['codeAgenceDeclarant'].errors!['required']">
+                                Code Agence Declarant est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Identifiant Interne Operation</label>
+                            <input type="text" class="form-control" formControlName="identifiantInterneOperation">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['identifiantInterneOperation'].touched &&
+                           ajoutRapportODFormGroup.controls['identifiantInterneOperation'].errors) && 
+                           ajoutRapportODFormGroup.controls['identifiantInterneOperation'].errors!['required']">
+                                Identifiant Interne Operation est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Date Operation</label>
+                            <input type="date" class="form-control" formControlName="dateOperation">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['dateOperation'].touched &&
+                           ajoutRapportODFormGroup.controls['dateOperation'].errors) && 
+                           ajoutRapportODFormGroup.controls['dateOperation'].errors!['required']">
+                                Date Operation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Type Operation</label>
+                            <input type="text" class="form-control" formControlName="codeTypeOperation">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['codeTypeOperation'].touched &&
+                           ajoutRapportODFormGroup.controls['codeTypeOperation'].errors) && 
+                           ajoutRapportODFormGroup.controls['codeTypeOperation'].errors!['required']">
+                                Code Type Operation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Devise</label>
+                            <input type="text" class="form-control" formControlName="codeDevise">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['codeDevise'].touched &&
+                           ajoutRapportODFormGroup.controls['codeDevise'].errors) && 
+                           ajoutRapportODFormGroup.controls['codeDevise'].errors!['required']">
+                                Code Devise est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Montant EnDevise</label>
+                            <input type="text" class="form-control" formControlName="montantEnDevise">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['montantEnDevise'].touched &&
+                           ajoutRapportODFormGroup.controls['montantEnDevise'].errors) && 
+                           ajoutRapportODFormGroup.controls['montantEnDevise'].errors!['required']">
+                                Montant En Devise est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Montant En Dinar</label>
+                            <input type="text" class="form-control" formControlName="montantEnDinar">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['montantEnDinar'].touched &&
+                           ajoutRapportODFormGroup.controls['montantEnDinar'].errors) && 
+                           ajoutRapportODFormGroup.controls['montantEnDinar'].errors!['required']">
+                                Montant En Dinar est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Numéro Declaration Douane</label>
+                            <input type="text" class="form-control" formControlName="numDeclarationDouane">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['numDeclarationDouane'].touched &&
+                           ajoutRapportODFormGroup.controls['numDeclarationDouane'].errors) && 
+                           ajoutRapportODFormGroup.controls['numDeclarationDouane'].errors!['required']">
+                                Numéro Declaration Douane est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Date Declaration Douane</label>
+                            <input type="date" class="form-control" formControlName="dateDeclarationDouane">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['dateDeclarationDouane'].touched &&
+                           ajoutRapportODFormGroup.controls['dateDeclarationDouane'].errors) && 
+                           ajoutRapportODFormGroup.controls['dateDeclarationDouane'].errors!['required']">
+                                Date Declaration Douane est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Montant Declaré En Douane</label>
+                            <input type="text" class="form-control" formControlName="montantDeclareEnDouane">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['montantDeclareEnDouane'].touched &&
+                           ajoutRapportODFormGroup.controls['montantDeclareEnDouane'].errors) && 
+                           ajoutRapportODFormGroup.controls['montantDeclareEnDouane'].errors!['required']">
+                                Montant Declare En Douane est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Type Identifiant Beneficiaire PP</label>
+                            <input type="text" class="form-control" formControlName="typeIdentifiantBeneficiairePP">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['typeIdentifiantBeneficiairePP'].touched &&
+                           ajoutRapportODFormGroup.controls['typeIdentifiantBeneficiairePP'].errors) && 
+                           ajoutRapportODFormGroup.controls['typeIdentifiantBeneficiairePP'].errors!['required']">
+                                Type Identifiant Beneficiaire PP est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Numéro Identifiant Beneficiaire PP</label>
+                            <input type="text" class="form-control" formControlName="numIdentifiantBeneficiairePP">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['numIdentifiantBeneficiairePP'].touched &&
+                           ajoutRapportODFormGroup.controls['numIdentifiantBeneficiairePP'].errors) && 
+                           ajoutRapportODFormGroup.controls['numIdentifiantBeneficiairePP'].errors!['required']">
+                                Numéro Identifiant Beneficiaire PP est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label>Type Identifiant Beneficiaire PM</label>
+                            <input type="text" class="form-control" formControlName="typeIdentifiantBeneficiairePM">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['typeIdentifiantBeneficiairePM'].touched &&
+                           ajoutRapportODFormGroup.controls['typeIdentifiantBeneficiairePM'].errors) && 
+                           ajoutRapportODFormGroup.controls['typeIdentifiantBeneficiairePM'].errors!['required']">
+                                Type Identifiant Beneficiaire PM est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Numéro Identifiant Beneficiaire PM</label>
+                            <input type="text" class="form-control" formControlName="numIdentifiantBeneficiairePM">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['numIdentifiantBeneficiairePM'].touched &&
+                           ajoutRapportODFormGroup.controls['numIdentifiantBeneficiairePM'].errors) && 
+                           ajoutRapportODFormGroup.controls['numIdentifiantBeneficiairePM'].errors!['required']">
+                                Numéro Identifiant Beneficiaire PM est obligatoire
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>RIB Beneficiaire</label>
+                            <input type="text" class="form-control" formControlName="ribBeneficiaire">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['ribBeneficiaire'].touched &&
+                           ajoutRapportODFormGroup.controls['ribBeneficiaire'].errors) && 
+                           ajoutRapportODFormGroup.controls['ribBeneficiaire'].errors!['required']">
+                                RIB Beneficiaire est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Type Compte Beneficiaire</label>
+                            <input type="text" class="form-control" formControlName="typeCompteBeneficiaire">
+                            <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['typeCompteBeneficiaire'].touched &&
+                           ajoutRapportODFormGroup.controls['typeCompteBeneficiaire'].errors) && 
+                           ajoutRapportODFormGroup.controls['typeCompteBeneficiaire'].errors!['required']">
+                                Type Compte Beneficiaire est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Code Pays Expediteur Des Fonds</label>
+                        <input type="text" class="form-control" formControlName="codePaysExpediteurDesFonds">
+                        <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.controls['codePaysExpediteurDesFonds'].touched &&
+                           ajoutRapportODFormGroup.controls['codePaysExpediteurDesFonds'].errors) && 
+                           ajoutRapportODFormGroup.controls['codePaysExpediteurDesFonds'].errors!['required']">
+                            Code Pays Expediteur Des Fonds est obligatoire
+                        </span>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Fin
+                        </div>
+                        <div class="card-body" formGroupName="fin">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <input type="text" class="form-control" formControlName="ndecl">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('fin.ndecl')!.touched &&
+                                    ajoutRapportODFormGroup.get('fin.ndecl')!.errors) ">
+                                        Numéro Déclaration Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr Entete</label>
+                                    <input type="text" class="form-control" formControlName="ktenr">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('fin.ktenr')!.touched &&
+                                    ajoutRapportODFormGroup.get('fin.ktenr')!.errors) ">
+                                        ktenr Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>tot_MVT Entete</label>
+                                    <input type="text" class="form-control" formControlName="tot_MVT">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('fin.tot_MVT')!.touched &&
+                                    ajoutRapportODFormGroup.get('fin.tot_MVT')!.errors) ">
+                                        tot_MVT Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT2 Entete</label>
+                                    <input type="text" class="form-control" formControlName="v_CPT2">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('fin.v_CPT2')!.touched &&
+                                    ajoutRapportODFormGroup.get('fin.v_CPT2')!.errors) ">
+                                        v_CPT2 Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT3 Entete</label>
+                                    <input type="text" class="form-control" formControlName="v_CPT3">
+                                    <span class="text-danger" *ngIf="(ajoutRapportODFormGroup.get('fin.v_CPT3')!.touched &&
+                                    ajoutRapportODFormGroup.get('fin.v_CPT3')!.errors) ">
+                                        v_CPT3 Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!ajoutRapportODFormGroup.valid" type="submit" class="btn btn-success">
+                                Ajouter
+                            </button>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

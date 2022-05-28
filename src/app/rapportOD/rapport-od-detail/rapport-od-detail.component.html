@@ -1,0 +1,223 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ajouter Rapport opération devise</h6>
+            </div>
+            <div class="card-body">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Entete:
+                        </div>
+                        <div class="card-body" formGroupName="entete">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <span type="text" class="form-control" >{{rapportOD.entete.ndecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr</label>
+                                    <span type="text" class="form-control"> {{rapportOD.entete.ktenr}}</span>
+                                    
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label>kte Entete</label>
+                                   <span type="text" class="form-control"> {{rapportOD.entete.kte}}</span>
+                                   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>ddecl Entete</label>
+                                    <span>{{rapportOD.entete.ddecl}}</span>>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>kmdecl Entete</label>
+                                   <span type="text" class="form-control"> {{rapportOD.entete.kmdecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>demiss Entete</label>
+                                    <span>{{rapportOD.entete.demiss}}</span>>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numéro Déclaration</label>
+                           <span type="text" class="form-control"> {{rapportOD.numeroDeclaration}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Enregistrement</label>
+                            <span>{{rapportOD.codeEnregistrement}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Operation</label>
+                           <span type="text" class="form-control"> {{rapportOD.codeOperation}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type Identifiant Client</label>
+                           <span type="text" class="form-control"> {{rapportOD.typeIdentifiantClient}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>numéro Identifiant Client</label>
+                        <span type="text" class="form-control"> {{rapportOD.numIdentifiantClient}}</span>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Agence Declarant</label>
+                            <span type="text" class="form-control"> {{rapportOD.codeAgenceDeclarant}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Identifiant Interne Operation</label>
+                            <span type="text" class="form-control"> {{rapportOD.identifiantInterneOperation}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Date Operation</label>
+                            <span>{{rapportOD.dateOperation}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Type Operation</label>
+                            <span type="text" class="form-control"> {{rapportOD.codeTypeOperation}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Devise</label>
+                           <span type="text" class="form-control"> {{rapportOD.codeDevise}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Montant EnDevise</label>
+                            <span type="text" class="form-control"> {{rapportOD.montantEnDevise}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Montant En Dinar</label>
+                            <span type="text" class="form-control"> {{rapportOD.montantEnDinar}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Numéro Declaration Douane</label>
+                            <span type="text" class="form-control"> {{rapportOD.numDeclarationDouane}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Date Declaration Douane</label>
+                            <span type="text" class="form-control"> {{rapportOD.dateDeclarationDouane}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Montant Declaré En Douane</label>
+                            <span type="text" class="form-control"> {{rapportOD.montantDeclareEnDouane}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Type Identifiant Beneficiaire PP</label>
+                            <span type="text" class="form-control"> {{rapportOD.typeIdentifiantBeneficiairePP}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Numéro Identifiant Beneficiaire PP</label>
+                            <span type="text" class="form-control"> {{rapportOD.numIdentifiantBeneficiairePP}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label>Type Identifiant Beneficiaire PM</label>
+                            <span type="text" class="form-control"> {{rapportOD.typeIdentifiantBeneficiairePM}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Numéro Identifiant Beneficiaire PM</label>
+                           <span type="text" class="form-control"> {{rapportOD.numIdentifiantBeneficiairePM}}</span>
+                           
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>RIB Beneficiaire</label>
+                           <span type="text" class="form-control"> {{rapportOD.ribBeneficiaire}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Type Compte Beneficiaire</label>
+                           <span type="text" class="form-control"> {{rapportOD.typeCompteBeneficiaire}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Code Pays Expediteur Des Fonds</label>
+                        <span type="text" class="form-control"> {{rapportOD.codePaysExpediteurDesFonds}}</span>
+                        
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Fin
+                        </div>
+                        <div class="card-body" formGroupName="fin">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                   <span type="text" class="form-control"> {{rapportOD.fin.ndecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr Entete</label>
+                                    <span type="text" class="form-control"> {{rapportOD.fin.ktenr}}</span>
+                                   
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>tot_MVT Entete</label>
+                                    <span type="text" class="form-control"> {{rapportOD.fin.tot_MVT}}</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT2 Entete</label>
+                                    <span type="text" class="form-control"> {{rapportOD.fin.v_CPT2}}</span>
+                                   
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT3 Entete</label>
+                                   <span type="text" class="form-control"> {{rapportOD.fin.v_CPT3}}</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+            </div>
+        </div>
+    </div>

@@ -2,10 +2,10 @@ import { CodeErreurRapport } from "./codeErreurRapports.model";
 
 export interface Entete{
     ndecl: number;
-    pktenr: number;
+    ktenr: number;
     kte: number;
-    nddecl: Date;
-    pkmdecl: number;
-    demiss: number;
+    ddecl: Date;
+    kmdecl: number;
+    demiss: Date;
     codeErreurRapports?: Array<CodeErreurRapport>;
 }

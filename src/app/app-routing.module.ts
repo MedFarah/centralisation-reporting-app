@@ -6,6 +6,9 @@ import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifie
 import { RapportRejetComponent } from './components/rapport-rejet/rapport-rejet.component';
 import { RapportPMRejetComponent } from './rapport-pmrejet/rapport-pmrejet.component';
 import { RapportPPRejetComponent } from './rapport-pp-rejet/rapport-pp-rejet.component';
+import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rapport-od-ajouter.component';
+import { RapportODListComponent } from './rapportOD/rapport-od-list/rapport-od-list.component';
+import { RapportODModifierComponent } from './rapportOD/rapport-od-modifier/rapport-od-modifier.component';
 
 const routes: Routes = [
   {path : 'rejet/rapportOD', component : RapportRejetComponent},
@@ -13,7 +16,10 @@ const routes: Routes = [
   {path : 'rejet/rapportPM', component: RapportPMRejetComponent},
   {path : 'rejet/codeErreur', component: CodeErreurListComponent},
   {path : 'rejet/codeErreurAjout', component: CodeErreurAjouterComponent},
-  {path : 'rejet/codeErreurUpdate/:codeErreur', component: CodeErreurModifierComponent}
+  {path : 'rejet/codeErreurUpdate/:codeErreur', component: CodeErreurModifierComponent},
+  {path : 'rapport/rapportOD', component: RapportODListComponent},
+  {path : 'rapport/rapportODAjout', component : RapportODAjouterComponent},
+  {path : 'rapport/rapportODUpdate/:numDeclaration', component : RapportODModifierComponent}
 ];
 
 @NgModule({

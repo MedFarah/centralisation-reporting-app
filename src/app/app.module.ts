@@ -14,6 +14,11 @@ import { CodeErreurListComponent } from './codeErreurBCT/code-erreur-list/code-e
 import { ReactiveFormsModule } from '@angular/forms';
 import { CodeErreurAjouterComponent } from './codeErreurBCT/code-erreur-ajouter/code-erreur-ajouter.component';
 import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifier/code-erreur-modifier.component';
+import { RapportODListComponent } from './rapportOD/rapport-od-list/rapport-od-list.component';
+import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rapport-od-ajouter.component';
+import { RapportService } from './services/rapport.service';
+import { RapportODModifierComponent } from './rapportOD/rapport-od-modifier/rapport-od-modifier.component';
+import { RapportODDetailComponent } from './rapportOD/rapport-od-detail/rapport-od-detail.component';
 
 
 @NgModule({
@@ -24,7 +29,11 @@ import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifie
     RapportPMRejetComponent,
     CodeErreurListComponent,
     CodeErreurAjouterComponent,
-    CodeErreurModifierComponent
+    CodeErreurModifierComponent,
+    RapportODListComponent,
+    RapportODAjouterComponent,
+    RapportODModifierComponent,
+    RapportODDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +43,9 @@ import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifie
     RouterModule,
     ReactiveFormsModule
   ],
-  providers: [RapportRejetService],
+  providers: [RapportRejetService,
+    RapportService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
