@@ -11,7 +11,7 @@
                             Ligne Entete:
                         </div>
                         <div class="card-body" formGroupName="entete">
-                            <div class="row" >
+                            <div class="row">
                                 <div class="form-group col-md-4">
                                     <label>Numéro Déclaration Entete</label>
                                     <input type="text" class="form-control" formControlName="ndecl">
@@ -132,8 +132,10 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label>Lieu Delivrance Document Identification</label>
-                            <input type="text" class="form-control" formControlName="lieuDelivranceDocumentIdentification">
-                            <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['lieuDelivranceDocumentIdentification'].touched &&
+                            <input type="text" class="form-control"
+                                formControlName="lieuDelivranceDocumentIdentification">
+                            <span class="text-danger"
+                                *ngIf="(ajoutRapportPPFormGroup.controls['lieuDelivranceDocumentIdentification'].touched &&
                            ajoutRapportPPFormGroup.controls['lieuDelivranceDocumentIdentification'].errors) && 
                            ajoutRapportPPFormGroup.controls['lieuDelivranceDocumentIdentification'].errors!['required']">
                                 Lieu Delivrance Document Identification est obligatoire
@@ -143,8 +145,10 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label>date Fin Validite Document Identification</label>
-                            <input type="date" class="form-control" formControlName="dateFinValiditeDocumentIdentification">
-                            <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['dateFinValiditeDocumentIdentification'].touched &&
+                            <input type="date" class="form-control"
+                                formControlName="dateFinValiditeDocumentIdentification">
+                            <span class="text-danger"
+                                *ngIf="(ajoutRapportPPFormGroup.controls['dateFinValiditeDocumentIdentification'].touched &&
                            ajoutRapportPPFormGroup.controls['dateFinValiditeDocumentIdentification'].errors) && 
                            ajoutRapportPPFormGroup.controls['dateFinValiditeDocumentIdentification'].errors!['required']">
                                 date Fin Validite Document Identification est obligatoire
@@ -176,7 +180,7 @@
                             <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['sexePersonnePhysique'].touched &&
                            ajoutRapportPPFormGroup.controls['sexePersonnePhysique'].errors) && 
                            ajoutRapportPPFormGroup.controls['sexePersonnePhysique'].errors!['required']">
-                           Sexe Personne Physique est obligatoire
+                                Sexe Personne Physique est obligatoire
                             </span>
                         </div>
                         <div class="form-group col-md-6">
@@ -214,7 +218,7 @@
                             <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['nationalite'].touched &&
                            ajoutRapportPPFormGroup.controls['nationalite'].errors) && 
                            ajoutRapportPPFormGroup.controls['nationalite'].errors!['required']">
-                           Nationalite est obligatoire
+                                Nationalite est obligatoire
                             </span>
                         </div>
                     </div>
@@ -254,16 +258,19 @@
                             <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['dateSituationJuridique'].touched &&
                            ajoutRapportPPFormGroup.controls['dateSituationJuridique'].errors) && 
                            ajoutRapportPPFormGroup.controls['dateSituationJuridique'].errors!['required']">
-                           Date Situation Juridique PM est obligatoire
+                                Date Situation Juridique PM est obligatoire
                             </span>
                         </div>
+                    </div>
 
+                
+                    <div class="row">
                         <div class="form-group col-md-3">
                             <label>Numero Telephone 1</label>
                             <input type="text" class="form-control" formControlName="numeroTelephone1">
                             <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['numeroTelephone1'].touched &&
-                           ajoutRapportPPFormGroup.controls['numeroTelephone1'].errors) && 
-                           ajoutRapportPPFormGroup.controls['numeroTelephone1'].errors!['required']">
+                            ajoutRapportPPFormGroup.controls['numeroTelephone1'].errors) && 
+                            ajoutRapportPPFormGroup.controls['numeroTelephone1'].errors!['required']">
                                 Numero Telephone 1 est obligatoire
                             </span>
                         </div>
@@ -271,29 +278,30 @@
                             <label>Numero Telephone2 </label>
                             <input type="text" class="form-control" formControlName="numeroTelephone2">
                             <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['numeroTelephone2'].touched &&
-                           ajoutRapportPPFormGroup.controls['numeroTelephone2'].errors) && 
-                           ajoutRapportPPFormGroup.controls['numeroTelephone2'].errors!['required']">
-                                Numero Telephone2  est obligatoire
+                            ajoutRapportPPFormGroup.controls['numeroTelephone2'].errors) && 
+                            ajoutRapportPPFormGroup.controls['numeroTelephone2'].errors!['required']">
+                                Numero Telephone2 est obligatoire
                             </span>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Numero Fax</label>
-                        <input type="text" class="form-control" formControlName="numeroFax">
-                        <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['numeroFax'].touched &&
-                           ajoutRapportPPFormGroup.controls['numeroFax'].errors) && 
-                           ajoutRapportPPFormGroup.controls['numeroFax'].errors!['required']">
-                            Numero Fax est obligatoire
-                        </span>
-                    </div>
-                    <div class="form-group">
-                        <label>numero Telex</label>
-                        <input type="text" class="form-control" formControlName="numeroTelex">
-                        <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['numeroTelex'].touched &&
-                           ajoutRapportPPFormGroup.controls['numeroTelex'].errors) && 
-                           ajoutRapportPPFormGroup.controls['numeroTelex'].errors!['required']">
-                            numero Telex est obligatoire
-                        </span>
+                    
+                        <div class="form-group col-md-3">
+                            <label>Numero Fax</label>
+                            <input type="text" class="form-control" formControlName="numeroFax">
+                            <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['numeroFax'].touched &&
+                                ajoutRapportPPFormGroup.controls['numeroFax'].errors) && 
+                                ajoutRapportPPFormGroup.controls['numeroFax'].errors!['required']">
+                                Numero Fax est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>numero Telex</label>
+                            <input type="text" class="form-control" formControlName="numeroTelex">
+                            <span class="text-danger" *ngIf="(ajoutRapportPPFormGroup.controls['numeroTelex'].touched &&
+                                ajoutRapportPPFormGroup.controls['numeroTelex'].errors) && 
+                                ajoutRapportPPFormGroup.controls['numeroTelex'].errors!['required']">
+                                numero Telex est obligatoire
+                            </span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Adresse Email</label>
@@ -310,7 +318,7 @@
                             Ligne Fin
                         </div>
                         <div class="card-body" formGroupName="fin">
-                            <div class="row" >
+                            <div class="row">
                                 <div class="form-group col-md-4">
                                     <label>Numéro Déclaration Entete</label>
                                     <input type="text" class="form-control" formControlName="ndecl">

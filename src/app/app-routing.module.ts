@@ -10,6 +10,10 @@ import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rappor
 import { RapportODDetailComponent } from './rapportOD/rapport-od-detail/rapport-od-detail.component';
 import { RapportODListComponent } from './rapportOD/rapport-od-list/rapport-od-list.component';
 import { RapportODModifierComponent } from './rapportOD/rapport-od-modifier/rapport-od-modifier.component';
+import { RapportPMAjoutComponent } from './rapportPM/rapport-pm-ajout/rapport-pm-ajout.component';
+import { RapportPMDetailComponent } from './rapportPM/rapport-pm-detail/rapport-pm-detail.component';
+import { RapportPMListComponent } from './rapportPM/rapport-pm-list/rapport-pm-list.component';
+import { RapportPMModifierComponent } from './rapportPM/rapport-pm-modifier/rapport-pm-modifier.component';
 import { RapportPPAjoutComponent } from './rapportPP/rapport-pp-ajout/rapport-pp-ajout.component';
 import { RapportPPDetailComponent } from './rapportPP/rapport-pp-detail/rapport-pp-detail.component';
 import { RapportPPListComponent } from './rapportPP/rapport-pp-list/rapport-pp-list.component';
@@ -29,7 +33,11 @@ const routes: Routes = [
   {path : 'rapport/rapportPP', component : RapportPPListComponent},
   {path : 'rapport/rapportPPAjout', component : RapportPPAjoutComponent},
   {path : 'rapport/rapportPPUpdate/:numDeclaration', component : RapportPPModiferComponent},
-  {path : 'rapport/rapportPPDetail/:numDeclaration', component : RapportPPDetailComponent}
+  {path : 'rapport/rapportPPDetail/:numDeclaration', component : RapportPPDetailComponent},
+  {path : 'rapport/rapportPM', component : RapportPMListComponent},
+  {path : 'rapport/rapportPMAjout', component : RapportPMAjoutComponent},
+  {path : 'rapport/rapportPMUpdate/:numDeclaration', component : RapportPMModifierComponent},
+  {path: 'rapport/rapportPMDetail/:numDeclaration', component : RapportPMDetailComponent}
 ];
 
 @NgModule({

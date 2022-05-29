@@ -24,6 +24,9 @@ import { RapportPPAjoutComponent } from './rapportPP/rapport-pp-ajout/rapport-pp
 import { RapportPPModiferComponent } from './rapportPP/rapport-pp-modifer/rapport-pp-modifer.component';
 import { RapportPPDetailComponent } from './rapportPP/rapport-pp-detail/rapport-pp-detail.component';
 import { RapportPMListComponent } from './rapportPM/rapport-pm-list/rapport-pm-list.component';
+import { RapportPMAjoutComponent } from './rapportPM/rapport-pm-ajout/rapport-pm-ajout.component';
+import { RapportPMModifierComponent } from './rapportPM/rapport-pm-modifier/rapport-pm-modifier.component';
+import { RapportPMDetailComponent } from './rapportPM/rapport-pm-detail/rapport-pm-detail.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { RapportPMListComponent } from './rapportPM/rapport-pm-list/rapport-pm-l
     RapportPPAjoutComponent,
     RapportPPModiferComponent,
     RapportPPDetailComponent,
-    RapportPMListComponent
+    RapportPMListComponent,
+    RapportPMAjoutComponent,
+    RapportPMModifierComponent,
+    RapportPMDetailComponent
   ],
   imports: [
     BrowserModule,

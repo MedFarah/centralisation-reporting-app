@@ -1,0 +1,264 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ajouter Rapport opération devise</h6>
+            </div>
+            <div class="card-body">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Entete:
+                        </div>
+                        <div class="card-body" formGroupName="entete">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.entete.ndecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr</label>
+                                    <span type="text" class="form-control" >{{rapportPM.entete.ktenr}}</span>
+                                   
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label>kte Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.entete.kte}}</span>
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>ddecl Entete</label>
+                                    <span type="date" class="form-control" >{{rapportPM.entete.ddecl}}</span>
+                                   
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>kmdecl Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.entete.kmdecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>demiss Entete</label>
+                                    <span type="date" class="form-control" >{{rapportPM.entete.demiss}}</span>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numéro Déclaration</label>
+                            <span type="text" class="form-control" >{{rapportPM.numeroDeclaration}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Enregistrement</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeEnregistrement}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Operation</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeOperation}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type Identifiant Personne</label>
+                            <span type="text" class="form-control" >{{rapportPM.typeIdentifiantPersonne}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Numero Identifiant Personne</label>
+                        <span type="text" class="form-control" >{{rapportPM.numeroIdentifiantPersonne}}</span>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numero Registre Commerce</label>
+                            <span type="text" class="form-control" >{{rapportPM.numeroRegistreCommerce}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Matricule Fiscal</label>
+                            <span type="text" class="form-control" >{{rapportPM.matriculeFiscal}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Raison Sociale PM</label>
+                            <span type="date" class="form-control" >{{rapportPM.raisonSocialePM}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Sigle PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.siglePM}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Qualite PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.qualitePM}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Nationalite PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.nationalitePM}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Type PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeTypePM}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Code Forme Juridique</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeFormeJuridique}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Activite PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeActivitePM}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Regime</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeRegime}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Situation</label>
+                            <span type="text" class="form-control" >{{rapportPM.codeSituation}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>date Situation Juridique</label>
+                            <span type="date" class="form-control" >{{rapportPM.dateSituationJuridique}}</span>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label>Reference Jort Situation Juridique</label>
+                            <span type="text" class="form-control" >{{rapportPM.referenceJortSituationJuridique}}</span>
+                            
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>creation PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.creationPM}}</span>
+                           
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>reference Jort PM</label>
+                            <span type="text" class="form-control" >{{rapportPM.referenceJortPM}}</span>
+                           
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>date Entre Exploitation </label>
+                            <span type="date" class="form-control" >{{rapportPM.dateEntreExploitation}}</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>montant Capital PM</label>
+                        <span type="text" class="form-control" >{{rapportPM.montantCapitalPM}}</span>
+                       
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>date Fixation Capital Social</label>
+                        <span type="date" class="form-control" >{{rapportPM.dateFixationCapitalSocial}}</span>
+                        
+                    </div>
+                </div>
+                    <div class="row">
+                    <div class="form-group col-md-3">
+                        <label>Numero Telephone 1</label>
+                        <span type="text" class="form-control" >{{rapportPM.numeroTelephone1}}</span>
+                      </div>
+                    <div class="form-group col-md-3">
+                        <label>Numero Telephone2 </label>
+                        <span type="text" class="form-control" >{{rapportPM.numeroTelephone2}}</span>
+                       
+                    </div>
+               
+                <div class="form-group col-md-3">
+                    <label>Numero Fax</label>
+                    <span type="text" class="form-control" >{{rapportPM.numeroFax}}</span>
+                   
+                </div>
+                <div class="form-group col-md-3">
+                    <label>numero Telex</label>
+                    <span type="text" class="form-control" >{{rapportPM.numeroTelex}}</span>
+                    
+                </div>
+            </div>
+                <div class="form-group">
+                    <label>Adresse Email</label>
+                    <span type="text" class="form-control" >{{rapportPM.adresseEmail}}</span>
+                    
+                </div>
+
+                    <div class="form-group">
+                        <label>adresse Web PM</label>
+                        <span type="text" class="form-control" >{{rapportPM.adresseWebPM}}</span>
+                        
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Fin
+                        </div>
+                        <div class="card-body" formGroupName="fin">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.fin.ndecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.fin.ktenr}}</span>
+                                   
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>tot_MVT Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.fin.tot_MVT}}</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT2 Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.fin.v_CPT2}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT3 Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPM.fin.v_CPT3}}</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+            </div>
+        </div>
+    </div>

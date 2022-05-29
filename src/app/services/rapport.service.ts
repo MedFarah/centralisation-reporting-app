@@ -61,20 +61,20 @@ export class RapportService {
 
 
   getAllRapportsPP(): Observable<RapportPP[]> {
-    return this.http.get<RapportPP[]>(this.baseUrl + '/rapportPM');
+    return this.http.get<RapportPP[]>(this.baseUrl + '/rapportPP');
   }
 
   getRapportPP(id: number): Observable<RapportPP> {
-    return this.http.get<RapportPP>(this.baseUrl + '/rapportPM/' + id);
+    return this.http.get<RapportPP>(this.baseUrl + '/rapportPP/' + id);
   }
-  createRapportPP(rapportPM: RapportPP): Observable<RapportPP> {
-    return this.http.post<RapportPP>(this.baseUrl + '/rapportPM', rapportPM);
+  createRapportPP(rapportPP: RapportPP): Observable<RapportPP> {
+    return this.http.post<RapportPP>(this.baseUrl + '/rapportPP', rapportPP);
   }
-  updateRapportPP(rapportPM: RapportPP): Observable<RapportPP> {
-    return this.http.put<RapportPP>(this.baseUrl + '/rapportPM', rapportPM);
+  updateRapportPP(rapportPP: RapportPP): Observable<RapportPP> {
+    return this.http.put<RapportPP>(this.baseUrl + '/rapportPP', rapportPP);
   }
   deleteRapportPP(id: number): Observable<any> {
-    return this.http.delete(this.baseUrl + '/rapportPM/' + id);
+    return this.http.delete(this.baseUrl + '/rapportPP/' + id);
   }
 
 

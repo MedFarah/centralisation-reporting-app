@@ -1,0 +1,425 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ajouter Rapport opération devise</h6>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="modifRapportPMFormGroup" (ngSubmit)="modifierRapportPM()">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Entete:
+                        </div>
+                        <div class="card-body" formGroupName="entete">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <input type="text" class="form-control" formControlName="ndecl" [(ngModel)]="rapportPM.entete.ndecl">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('entete.ndecl')!.touched &&
+                                    modifRapportPMFormGroup.get('entete.ndecl')!.errors) ">
+                                        Numéro Déclaration LigneEntete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr</label>
+                                    <input type="text" class="form-control" formControlName="ktenr" [(ngModel)]="rapportPM.entete.ktenr">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('entete.ktenr')!.touched &&
+                                    modifRapportPMFormGroup.get('entete.ktenr')!.errors) ">
+                                        code enregistrement pour Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label>kte Entete</label>
+                                    <input type="text" class="form-control" formControlName="kte" [(ngModel)]="rapportPM.entete.kte">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('entete.kte')!.touched &&
+                                    modifRapportPMFormGroup.get('entete.kte')!.errors) ">
+                                        kte Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>ddecl Entete</label>
+                                    <input type="date" class="form-control" formControlName="ddecl" [(ngModel)]="rapportPM.entete.ddecl">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('entete.ddecl')!.touched &&
+                                    modifRapportPMFormGroup.get('entete.ddecl')!.errors) ">
+                                        ddecl Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>kmdecl Entete</label>
+                                    <input type="text" class="form-control" formControlName="kmdecl" [(ngModel)]="rapportPM.entete.kmdecl">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('entete.kmdecl')!.touched &&
+                                    modifRapportPMFormGroup.get('entete.kmdecl')!.errors) ">
+                                        kmdecl Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>demiss Entete</label>
+                                    <input type="date" class="form-control" formControlName="demiss" [(ngModel)]="rapportPM.entete.demiss">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('entete.demiss')!.touched &&
+                                    modifRapportPMFormGroup.get('entete.demiss')!.errors) ">
+                                        demiss Ligne Entete est obligatoire
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numéro Déclaration</label>
+                            <input type="text" class="form-control" formControlName="numeroDeclaration" readonly>
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroDeclaration'].touched &&
+                           modifRapportPMFormGroup.controls['numeroDeclaration'].errors) && 
+                           modifRapportPMFormGroup.controls['numeroDeclaration'].errors!['required']">
+                                Numero Declaration est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Enregistrement</label>
+                            <input type="text" class="form-control" formControlName="codeEnregistrement">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeEnregistrement'].touched &&
+                           modifRapportPMFormGroup.controls['codeEnregistrement'].errors) && 
+                           modifRapportPMFormGroup.controls['codeEnregistrement'].errors!['required']">
+                                Code Enregistrement est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Operation</label>
+                            <input type="text" class="form-control" formControlName="codeOperation">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeOperation'].touched &&
+                           modifRapportPMFormGroup.controls['codeOperation'].errors) && 
+                           modifRapportPMFormGroup.controls['codeOperation'].errors!['required']">
+                                Code Operation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type Identifiant Personne</label>
+                            <input type="text" class="form-control" formControlName="typeIdentifiantPersonne">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['typeIdentifiantPersonne'].touched &&
+                           modifRapportPMFormGroup.controls['typeIdentifiantPersonne'].errors) && 
+                           modifRapportPMFormGroup.controls['typeIdentifiantPersonne'].errors!['required']">
+                                Type Identifiant Personne est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Numero Identifiant Personne</label>
+                        <input type="text" class="form-control" formControlName="numeroIdentifiantPersonne">
+                        <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroIdentifiantPersonne'].touched &&
+                           modifRapportPMFormGroup.controls['numeroIdentifiantPersonne'].errors) && 
+                           modifRapportPMFormGroup.controls['numeroIdentifiantPersonne'].errors!['required']">
+                            Numero Identifiant Personne est obligatoire
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numero Registre Commerce</label>
+                            <input type="text" class="form-control" formControlName="numeroRegistreCommerce">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroRegistreCommerce'].touched &&
+                           modifRapportPMFormGroup.controls['numeroRegistreCommerce'].errors) && 
+                           modifRapportPMFormGroup.controls['numeroRegistreCommerce'].errors!['required']">
+                                Numero Registre Commerce est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Matricule Fiscal</label>
+                            <input type="text" class="form-control" formControlName="matriculeFiscal">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['matriculeFiscal'].touched &&
+                           modifRapportPMFormGroup.controls['matriculeFiscal'].errors) && 
+                           modifRapportPMFormGroup.controls['matriculeFiscal'].errors!['required']">
+                                Matricule Fiscal est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Raison Sociale PM</label>
+                            <input type="date" class="form-control" formControlName="raisonSocialePM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['raisonSocialePM'].touched &&
+                           modifRapportPMFormGroup.controls['raisonSocialePM'].errors) && 
+                           modifRapportPMFormGroup.controls['raisonSocialePM'].errors!['required']">
+                                Raison Sociale PM est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Sigle PM</label>
+                            <input type="text" class="form-control" formControlName="siglePM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['siglePM'].touched &&
+                           modifRapportPMFormGroup.controls['siglePM'].errors) && 
+                           modifRapportPMFormGroup.controls['siglePM'].errors!['required']">
+                                Sigle PM est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Qualite PM</label>
+                            <input type="text" class="form-control" formControlName="qualitePM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['qualitePM'].touched &&
+                           modifRapportPMFormGroup.controls['qualitePM'].errors) && 
+                           modifRapportPMFormGroup.controls['qualitePM'].errors!['required']">
+                                Qualite PM est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Nationalite PM</label>
+                            <input type="text" class="form-control" formControlName="nationalitePM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['nationalitePM'].touched &&
+                           modifRapportPMFormGroup.controls['nationalitePM'].errors) && 
+                           modifRapportPMFormGroup.controls['nationalitePM'].errors!['required']">
+                           Nationalite PM est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Type PM</label>
+                            <input type="text" class="form-control" formControlName="codeTypePM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeTypePM'].touched &&
+                           modifRapportPMFormGroup.controls['codeTypePM'].errors) && 
+                           modifRapportPMFormGroup.controls['codeTypePM'].errors!['required']">
+                                Code Type PM est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Code Forme Juridique</label>
+                            <input type="text" class="form-control" formControlName="codeFormeJuridique">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeFormeJuridique'].touched &&
+                           modifRapportPMFormGroup.controls['codeFormeJuridique'].errors) && 
+                           modifRapportPMFormGroup.controls['codeFormeJuridique'].errors!['required']">
+                                Code Forme Juridique est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Activite PM</label>
+                            <input type="text" class="form-control" formControlName="codeActivitePM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeActivitePM'].touched &&
+                           modifRapportPMFormGroup.controls['codeActivitePM'].errors) && 
+                           modifRapportPMFormGroup.controls['codeActivitePM'].errors!['required']">
+                                Code Activite PM est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Code Regime</label>
+                            <input type="text" class="form-control" formControlName="codeRegime">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeRegime'].touched &&
+                           modifRapportPMFormGroup.controls['codeRegime'].errors) && 
+                           modifRapportPMFormGroup.controls['codeRegime'].errors!['required']">
+                           Code Regime est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Situation</label>
+                            <input type="text" class="form-control" formControlName="codeSituation">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['codeSituation'].touched &&
+                           modifRapportPMFormGroup.controls['codeSituation'].errors) && 
+                           modifRapportPMFormGroup.controls['codeSituation'].errors!['required']">
+                                Code Situation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>date Situation Juridique</label>
+                            <input type="date" class="form-control" formControlName="dateSituationJuridique">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['dateSituationJuridique'].touched &&
+                           modifRapportPMFormGroup.controls['dateSituationJuridique'].errors) && 
+                           modifRapportPMFormGroup.controls['dateSituationJuridique'].errors!['required']">
+                                dateSituationJuridique est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label>Reference Jort Situation Juridique</label>
+                            <input type="text" class="form-control" formControlName="referenceJortSituationJuridique">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['referenceJortSituationJuridique'].touched &&
+                           modifRapportPMFormGroup.controls['referenceJortSituationJuridique'].errors) && 
+                           modifRapportPMFormGroup.controls['referenceJortSituationJuridique'].errors!['required']">
+                                referenceJortSituationJuridique est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>creation PM</label>
+                            <input type="text" class="form-control" formControlName="creationPM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['creationPM'].touched &&
+                           modifRapportPMFormGroup.controls['creationPM'].errors) && 
+                           modifRapportPMFormGroup.controls['creationPM'].errors!['required']">
+                           creationPM PM est obligatoire
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>reference Jort PM</label>
+                            <input type="text" class="form-control" formControlName="referenceJortPM">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['referenceJortPM'].touched &&
+                           modifRapportPMFormGroup.controls['referenceJortPM'].errors) && 
+                           modifRapportPMFormGroup.controls['referenceJortPM'].errors!['required']">
+                                referenceJortPM est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>date Entre Exploitation </label>
+                            <input type="date" class="form-control" formControlName="dateEntreExploitation">
+                            <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['dateEntreExploitation'].touched &&
+                           modifRapportPMFormGroup.controls['dateEntreExploitation'].errors) && 
+                           modifRapportPMFormGroup.controls['dateEntreExploitation'].errors!['required']">
+                                dateEntreExploitation  est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>montant Capital PM</label>
+                        <input type="text" class="form-control" formControlName="montantCapitalPM">
+                        <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['montantCapitalPM'].touched &&
+                           modifRapportPMFormGroup.controls['montantCapitalPM'].errors) && 
+                           modifRapportPMFormGroup.controls['montantCapitalPM'].errors!['required']">
+                            montant Capital PM est obligatoire
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>date Fixation Capital Social</label>
+                        <input type="date" class="form-control" formControlName="dateFixationCapitalSocial">
+                        <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['dateFixationCapitalSocial'].touched &&
+                           modifRapportPMFormGroup.controls['dateFixationCapitalSocial'].errors) && 
+                           modifRapportPMFormGroup.controls['dateFixationCapitalSocial'].errors!['required']">
+                            date Fixation Capital Social est obligatoire
+                        </span>
+                    </div>
+                </div>
+                    <div class="row">
+                    <div class="form-group col-md-3">
+                        <label>Numero Telephone 1</label>
+                        <input type="text" class="form-control" formControlName="numeroTelephone1">
+                        <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroTelephone1'].touched &&
+                       modifRapportPMFormGroup.controls['numeroTelephone1'].errors) && 
+                       modifRapportPMFormGroup.controls['numeroTelephone1'].errors!['required']">
+                            Numero Telephone 1 est obligatoire
+                        </span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Numero Telephone2 </label>
+                        <input type="text" class="form-control" formControlName="numeroTelephone2">
+                        <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroTelephone2'].touched &&
+                       modifRapportPMFormGroup.controls['numeroTelephone2'].errors) && 
+                       modifRapportPMFormGroup.controls['numeroTelephone2'].errors!['required']">
+                            Numero Telephone2  est obligatoire
+                        </span>
+                    </div>
+               
+                <div class="form-group col-md-3">
+                    <label>Numero Fax</label>
+                    <input type="text" class="form-control" formControlName="numeroFax">
+                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroFax'].touched &&
+                       modifRapportPMFormGroup.controls['numeroFax'].errors) && 
+                       modifRapportPMFormGroup.controls['numeroFax'].errors!['required']">
+                        Numero Fax est obligatoire
+                    </span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label>numero Telex</label>
+                    <input type="text" class="form-control" formControlName="numeroTelex">
+                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['numeroTelex'].touched &&
+                       modifRapportPMFormGroup.controls['numeroTelex'].errors) && 
+                       modifRapportPMFormGroup.controls['numeroTelex'].errors!['required']">
+                        numero Telex est obligatoire
+                    </span>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label>Adresse Email</label>
+                    <input type="text" class="form-control" formControlName="adresseEmail">
+                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['adresseEmail'].touched &&
+                       modifRapportPMFormGroup.controls['adresseEmail'].errors) && 
+                       modifRapportPMFormGroup.controls['adresseEmail'].errors!['required']">
+                        Adresse Email est obligatoire
+                    </span>
+                </div>
+
+                    <div class="form-group">
+                        <label>adresse Web PM</label>
+                        <input type="text" class="form-control" formControlName="adresseWebPM">
+                        <span class="text-danger" *ngIf="(modifRapportPMFormGroup.controls['adresseWebPM'].touched &&
+                           modifRapportPMFormGroup.controls['adresseWebPM'].errors) && 
+                           modifRapportPMFormGroup.controls['adresseWebPM'].errors!['required']">
+                            adresseWebPM est obligatoire
+                        </span>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Fin
+                        </div>
+                        <div class="card-body" formGroupName="fin">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <input type="text" class="form-control" formControlName="ndecl" [(ngModel)]="rapportPM.fin.ndecl">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('fin.ndecl')!.touched &&
+                                    modifRapportPMFormGroup.get('fin.ndecl')!.errors) ">
+                                        Numéro Déclaration Ligne fin est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr fin</label>
+                                    <input type="text" class="form-control" formControlName="ktenr" [(ngModel)]="rapportPM.fin.ktenr">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('fin.ktenr')!.touched &&
+                                    modifRapportPMFormGroup.get('fin.ktenr')!.errors) ">
+                                        ktenr Ligne fin est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>tot_MVT fin</label>
+                                    <input type="text" class="form-control" formControlName="tot_MVT" [(ngModel)]="rapportPM.fin.tot_MVT">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('fin.tot_MVT')!.touched &&
+                                    modifRapportPMFormGroup.get('fin.tot_MVT')!.errors) ">
+                                        tot_MVT Ligne fin est obligatoire
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT2 fin</label>
+                                    <input type="text" class="form-control" formControlName="v_CPT2" [(ngModel)]="rapportPM.fin.v_CPT2">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('fin.v_CPT2')!.touched &&
+                                    modifRapportPMFormGroup.get('fin.v_CPT2')!.errors) ">
+                                        v_CPT2 Ligne fin est obligatoire
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT3 Entete</label>
+                                    <input type="text" class="form-control" formControlName="v_CPT3" [(ngModel)]="rapportPM.fin.v_CPT3">
+                                    <span class="text-danger" *ngIf="(modifRapportPMFormGroup.get('fin.v_CPT3')!.touched &&
+                                    modifRapportPMFormGroup.get('fin.v_CPT3')!.errors) ">
+                                        v_CPT3 Ligne fin est obligatoire
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!modifRapportPMFormGroup.valid" type="submit" class="btn btn-success">
+                                Update
+                            </button>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

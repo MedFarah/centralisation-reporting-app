@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RapportPP } from 'src/app/models/rapportPersonnePhysique.model';
 import { RapportService } from 'src/app/services/rapport.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-rapport-pp-modifer',
@@ -102,6 +103,14 @@ export class RapportPPModiferComponent implements OnInit {
   }
   UpdateRapportPP(){
 
+    let rapportPP:RapportPP = this.updateRapportPPFormGroup.value;
+    if(this.updateRapportPPFormGroup.valid){
+      this.rapportService.updateRapportPP(rapportPP).subscribe(res=>{
+        Swal.fire('updated!').then((ress)=>{this.router.navigateByUrl('/rapport/rapportPP');
+      });
+    },err=>
+    {alert('something went wrong..')});
+    }
   }
 
 }
