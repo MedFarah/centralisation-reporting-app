@@ -19,6 +19,11 @@ import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rappor
 import { RapportService } from './services/rapport.service';
 import { RapportODModifierComponent } from './rapportOD/rapport-od-modifier/rapport-od-modifier.component';
 import { RapportODDetailComponent } from './rapportOD/rapport-od-detail/rapport-od-detail.component';
+import { RapportPPListComponent } from './rapportPP/rapport-pp-list/rapport-pp-list.component';
+import { RapportPPAjoutComponent } from './rapportPP/rapport-pp-ajout/rapport-pp-ajout.component';
+import { RapportPPModiferComponent } from './rapportPP/rapport-pp-modifer/rapport-pp-modifer.component';
+import { RapportPPDetailComponent } from './rapportPP/rapport-pp-detail/rapport-pp-detail.component';
+import { RapportPMListComponent } from './rapportPM/rapport-pm-list/rapport-pm-list.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { RapportODDetailComponent } from './rapportOD/rapport-od-detail/rapport-
     RapportODListComponent,
     RapportODAjouterComponent,
     RapportODModifierComponent,
-    RapportODDetailComponent
+    RapportODDetailComponent,
+    RapportPPListComponent,
+    RapportPPAjoutComponent,
+    RapportPPModiferComponent,
+    RapportPPDetailComponent,
+    RapportPMListComponent
   ],
   imports: [
     BrowserModule,

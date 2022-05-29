@@ -54,7 +54,6 @@ export class RapportODListComponent implements OnInit {
     }
 
     generateRapportOD(){
-      console.log('aaaaaa');
       Swal.fire({
         title: 'Are you sure?',
         text: 'This process is irreversible.',
@@ -100,6 +99,10 @@ export class RapportODListComponent implements OnInit {
     UpdateRapportOD(numDeclaration:number){
       this.router.navigate(['/rapport/rapportODUpdate/',numDeclaration]);
 
+    }
+
+    DetailRapportOD(numDeclaration:number){
+      this.router.navigate(['/rapport/rapportODDetail/',numDeclaration]);
     }
   }
 

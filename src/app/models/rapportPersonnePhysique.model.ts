@@ -4,33 +4,33 @@ import { CodeErreurRapport } from "./codeErreurRapports.model";
 
 export interface RapportPP {
     entete: Entete;
-    numeroDeclaration: any;
+    numeroDeclaration: number;
     codeEnregistrement: number;
-    codeOperation: string;
-    typeDocument: string;
-    numeroDocumentIdentification: string;
+    codeOperation?: string;
+    typeDocument?: string;
+    numeroDocumentIdentification?: string;
 
-    dateDebutDocumentIdentification: Date;
-    lieuDelivranceDocumentIdentification: string;
+    dateDebutDocumentIdentification?: Date;
+    lieuDelivranceDocumentIdentification?: string;
 
-    dateFinValiditeDocumentIdentification: string;
+    dateFinValiditeDocumentIdentification?: Date;
 
-    nomPersonPhysique: string;
-    prenomPersonnePhysique: string;
-    sexePersonnePhysique: string;
-    dateNaissance: Date;
-    lieuNaissance: string;
-    qualitePersonne: string;
-    nationalite: string;
-    profession: string;
-    etatCivil: string;
-    situationJuridique: number;
-    dateSituationJuridique: Date;
-    numeroTelephone1: string;
-    numeroTelephone2: string;
-    numeroFax: string;
-    numeroTelex: string;
-    adresseEmail: string;
+    nomPersonPhysique?: string;
+    prenomPersonnePhysique?: string;
+    sexePersonnePhysique?: string;
+    dateNaissance?: Date;
+    lieuNaissance?: string;
+    qualitePersonne?: string;
+    nationalite?: string;
+    profession?: string;
+    etatCivil?: string;
+    situationJuridique?: number;
+    dateSituationJuridique?: Date;
+    numeroTelephone1?: string;
+    numeroTelephone2?: string;
+    numeroFax?: string;
+    numeroTelex?: string;
+    adresseEmail?: string;
     fin: Fin;
     codeErreurRapports?: Array<CodeErreurRapport>;
 }

@@ -1,7 +1,7 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a (click)="generateRapportOD()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+    <a (click)="generateRapportPP()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i> Generate Report PP</a>
 </div>
 
 
@@ -98,7 +98,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Rapports de type 910 : Rapport Operation Devise</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Rapports de type 105 : Rapport Personne Physique</h6>
         <div class="dropdown no-arrow">
             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,7 +107,7 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                 aria-labelledby="dropdownMenuLink">
                 <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" [routerLink]="['/rapport/rapportODAjout']">Ajouter Rapport opération devise</a>
+                <a class="dropdown-item" [routerLink]="['/rapport/rapportPPAjout']">Ajouter Rapport personne physique</a>
                
                 <div class="dropdown-divider"></div>
                 
@@ -121,17 +121,14 @@
                 <thead>
                     <tr>
                         <th>Numero Declaration</th>
-                        <th>Date Operation</th>
-                        <th>Num Identifiant Client</th>
-
-                        <th>Type Identifiant Client</th>
-                        <th>Identifiant Interne Operation</th>
-
-                        <th>Date Declaration Douane</th>
-                        <th>code TypeOperation</th>
-
-                        <th>Num Declaration Douane</th>
-                        <th>Montant Declaré En Douane</th>
+                        <th>Code Operation</th>
+                        <th>Type Document</th>
+                        <th>Numero Document Identification</th>
+                        <th>Lieu Delivrance Document Identification</th>
+                        <th>Date Debut Document Identification</th>
+                        <th>Date Fin Validite Document Identification</th>
+                        <th>Nom Personne Physique</th>
+                        <th>Code Enregistrementt</th>
                         <th></th>
                     </tr>
 
@@ -139,45 +136,42 @@
                 <tfoot>
                     <tr>
                         <th>Numero Declaration</th>
-                        <th>Date Operation</th>
-                        <th>Num Identifiant Client</th>
-
-                        <th>Type Identifiant Client</th>
-                        <th>Identifiant Interne Operation</th>
-
-                        <th>Date Declaration Douane</th>
-                        <th>code TypeOperation</th>
-
-                        <th>Num Declaration Douane</th>
-                        <th>Montant Declaré En Douane</th>
+                        <th>Code Operation</th>
+                        <th>Type Document</th>
+                        <th>Numero Document Identification</th>
+                        <th>Lieu Delivrance Document Identification</th>
+                        <th>Date Debut Document Identification</th>
+                        <th>Date Fin Validite Document Identification</th>
+                        <th>Nom Personne Physique</th>
+                        <th>Code Enregistrementt</th>
                         <th></th>
                     </tr>
                 </tfoot>
                 <tbody>
                     <tr *ngFor="let rapport of rapports">
                         <td>{{ rapport.numeroDeclaration }}</td>
-                        <td>{{ rapport.dateOperation | date: 'dd/MM/yyyy' }}</td>
-                        <td>{{ rapport.numIdentifiantClient ?? ""}}</td>
+                        <td>{{ rapport.codeOperation ?? "" }}</td>
+                        <td>{{ rapport.typeDocument ?? ""}}</td>
 
-                        <td>{{rapport.typeIdentifiantClient ?? ""}}</td>
-                        <td>{{rapport.identifiantInterneOperation ?? ""}}</td>
+                        <td>{{rapport.numeroDocumentIdentification ?? ""}}</td>
+                        <td>{{rapport.lieuDelivranceDocumentIdentification ?? ""}}</td>
 
-                        <td>{{rapport.dateDeclarationDouane | date: 'dd/MM/yyyy' }}</td>
-                        <td>{{rapport.codeTypeOperation ?? ""}}</td>
+                        <td>{{rapport.dateDebutDocumentIdentification ?? ""  | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{rapport.dateFinValiditeDocumentIdentification  ?? "" | date: 'dd/MM/yyyy'}}</td>
 
-                        <td>{{rapport.numDeclarationDouane ?? ""}}</td>
-                        <td> {{ rapport.montantDeclareEnDouane ?? ""}}</td>
+                        <td>{{rapport.nomPersonPhysique ?? ""}}</td>
+                        <td> {{ rapport.codeEnregistrement }}</td>
                         <td>
                         <div class="row">
-                            <button class="btn btn-danger btn-sm col-md-6" (click)="DeleteRapportOD(rapport.numeroDeclaration)">
+                            <button class="btn btn-danger btn-sm col-md-6" (click)="DeleteRapportPP(rapport.numeroDeclaration)">
                                 <i class="fas fa-trash"></i> 
                             </button>
     
-                            <button class="btn btn-warning btn-circle btn-sm col-md-6" (click)="UpdateRapportOD(rapport.numeroDeclaration)">
+                            <button class="btn btn-warning btn-circle btn-sm col-md-6" (click)="UpdateRapportPP(rapport.numeroDeclaration)">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </button>
 
-                            <button class="btn btn-info btn-circle btn-sm col-md-6" (click)="DetailRapportOD(rapport.numeroDeclaration)">
+                            <button class="btn btn-info btn-circle btn-sm col-md-6" (click)="DetailRapportPP(rapport.numeroDeclaration)">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>

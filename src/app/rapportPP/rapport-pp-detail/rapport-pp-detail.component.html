@@ -1,0 +1,263 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Detail Rapport PP</h6>
+            </div>
+            <div class="card-body">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Entete:
+                        </div>
+                        <div class="card-body" formGroupName="entete">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <span type="text" class="form-control"> {{rapportPP.entete.ndecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr</label>
+                                    <span type="text" class="form-control" >{{rapportPP.entete.ktenr}}</span>
+                                    
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label>kte Entete</label>
+                                    <span type="text" class="form-control">{{rapportPP.entete.kte}}</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label>ddecl Entete</label>
+                                    <span type="date" class="form-control" >{{rapportPP.entete.ddecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>kmdecl Entete</label>
+                                    <span type="text" class="form-control" >{{rapportPP.entete.kmdecl}}</span>
+                                    
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>demiss Entete</label>
+                                    <span type="date" class="form-control" >{{rapportPP.entete.demiss}}</span>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Numéro Déclaration</label>
+                            <span type="text" class="form-control">
+                                {{rapportPP.numeroDeclaration}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Code Enregistrement</label>
+                            <span type="text" class="form-control">
+                                {{rapportPP.codeEnregistrement}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Code Operation</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.codeOperation}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type Document</label>
+                            <span type="text" class="form-control" >
+                            {{rapportPP.typeDocument}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Numero Document Identificationt</label>
+                        <span type="text" class="form-control" >
+                            {{rapportPP.numeroDocumentIdentification}}
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Date Debut Document Identification</label>
+                            <span type="date" class="form-control" >
+                                {{rapportPP.dateDebutDocumentIdentification}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Lieu Delivrance Document Identification</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.lieuDelivranceDocumentIdentification}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>date Fin Validite Document Identification</label>
+                            <span type="date" class="form-control" >
+                                {{rapportPP.dateFinValiditeDocumentIdentification}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Nom Personne Physique</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.nomPersonPhysique}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Prenom Personne Physique</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.prenomPersonnePhysique}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Sexe Personne Physique</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.sexePersonnePhysique}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Date Naissance</label>
+                            <span type="date" class="form-control" >
+                                {{rapportPP.dateNaissance}}                      
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Lieu Naissance</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.lieuNaissance}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Qualite Personne</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.qualitePersonne}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Nationalite</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.nationalite}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Profession</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.profession}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Etat Civil</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.etatCivil}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label>Situation Juridique</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.situationJuridique}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Date Situation Juridique</label>
+                            <span type="date" class="form-control" >
+                                {{rapportPP.dateSituationJuridique}}
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>Numero Telephone 1</label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.numeroTelephone1}}
+                            </span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Numero Telephone2 </label>
+                            <span type="text" class="form-control" >
+                                {{rapportPP.numeroTelephone2}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Numero Fax</label>
+                        <span type="text" class="form-control" >
+                            {{rapportPP.numeroFax}}
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label>numero Telex</label>
+                        <span type="text" class="form-control" >
+                            {{rapportPP.numeroTelex}}
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label>Adresse Email</label>
+                        <span type="text" class="form-control" >
+                            {{rapportPP.adresseEmail}}
+                        </span>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Ligne Fin
+                        </div>
+                        <div class="card-body" formGroupName="fin">
+                            <div class="row" >
+                                <div class="form-group col-md-4">
+                                    <label>Numéro Déclaration Entete</label>
+                                    <span type="text" class="form-control">
+                                        {{rapportPP.fin.ndecl}}
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>ktenr fin</label>
+                                    <span type="text" class="form-control" >
+                                        {{rapportPP.fin.ktenr}}
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>tot_MVT fin</label>
+                                    <span type="text" class="form-control" >
+                                        {{rapportPP.fin.tot_MVT}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT2 fin</label>
+                                    <span type="text" class="form-control" >
+                                        {{rapportPP.fin.v_CPT2}}
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>v_CPT3 Fin</label>
+                                    <span type="text" class="form-control" >
+                                        {{rapportPP.fin.v_CPT3}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+              
+            </div>
+        </div>
+    </div>

@@ -7,8 +7,13 @@ import { RapportRejetComponent } from './components/rapport-rejet/rapport-rejet.
 import { RapportPMRejetComponent } from './rapport-pmrejet/rapport-pmrejet.component';
 import { RapportPPRejetComponent } from './rapport-pp-rejet/rapport-pp-rejet.component';
 import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rapport-od-ajouter.component';
+import { RapportODDetailComponent } from './rapportOD/rapport-od-detail/rapport-od-detail.component';
 import { RapportODListComponent } from './rapportOD/rapport-od-list/rapport-od-list.component';
 import { RapportODModifierComponent } from './rapportOD/rapport-od-modifier/rapport-od-modifier.component';
+import { RapportPPAjoutComponent } from './rapportPP/rapport-pp-ajout/rapport-pp-ajout.component';
+import { RapportPPDetailComponent } from './rapportPP/rapport-pp-detail/rapport-pp-detail.component';
+import { RapportPPListComponent } from './rapportPP/rapport-pp-list/rapport-pp-list.component';
+import { RapportPPModiferComponent } from './rapportPP/rapport-pp-modifer/rapport-pp-modifer.component';
 
 const routes: Routes = [
   {path : 'rejet/rapportOD', component : RapportRejetComponent},
@@ -19,7 +24,12 @@ const routes: Routes = [
   {path : 'rejet/codeErreurUpdate/:codeErreur', component: CodeErreurModifierComponent},
   {path : 'rapport/rapportOD', component: RapportODListComponent},
   {path : 'rapport/rapportODAjout', component : RapportODAjouterComponent},
-  {path : 'rapport/rapportODUpdate/:numDeclaration', component : RapportODModifierComponent}
+  {path : 'rapport/rapportODUpdate/:numDeclaration', component : RapportODModifierComponent},
+  {path : 'rapport/rapportODDetail/:numDeclaration', component : RapportODDetailComponent},
+  {path : 'rapport/rapportPP', component : RapportPPListComponent},
+  {path : 'rapport/rapportPPAjout', component : RapportPPAjoutComponent},
+  {path : 'rapport/rapportPPUpdate/:numDeclaration', component : RapportPPModiferComponent},
+  {path : 'rapport/rapportPPDetail/:numDeclaration', component : RapportPPDetailComponent}
 ];
 
 @NgModule({
