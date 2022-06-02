@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ajouter Liste des destinataires</h6>
+    </div>
+<div class="card-body">
+<form [formGroup]="formgroup" (ngSubmit)="ajoutListeDestinataire()">
+    <div class="form-group">
+                            <label>Entité</label>
+                            <input type="text" class="form-control" formControlName="entite">
+                           <span class="text-danger" *ngIf="(formgroup.controls['entite'].touched &&
+                            formgroup.controls['entite'].errors) && 
+                                formgroup.controls['entite'].errors!['required']">
+                                entite est obligatoire
+                            </span> 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Destinataire</label>
+                            <input type="text" class="form-control" formControlName="destinataire">
+                           <span class="text-danger" *ngIf="(formgroup.controls['destinataire'].touched &&
+                            formgroup.controls['destinataire'].errors) && 
+                                formgroup.controls['destinataire'].errors!['required']">
+                                destinataire est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Pour Approb.</label>
+                            <input type="text" class="form-control" formControlName="pourApprob">
+                           <span class="text-danger" *ngIf="(formgroup.controls['pourApprob'].touched &&
+                            formgroup.controls['pourApprob'].errors) && 
+                                formgroup.controls['pourApprob'].errors!['required']">
+                                pour Approb est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Pour Comment.</label>
+                            <input pourComment="text" class="form-control" formControlName="pourComment">
+                           <span class="text-danger" *ngIf="(formgroup.controls['pourComment'].touched &&
+                            formgroup.controls['pourComment'].errors) && 
+                                formgroup.controls['pourComment'].errors!['required']">
+                                pour Comment est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Pour Appli</label>
+                            <input modeDeLancement="text" class="form-control" formControlName="pourAppli">
+                           <span class="text-danger" *ngIf="(formgroup.controls['pourAppli'].touched &&
+                            formgroup.controls['pourAppli'].errors) && 
+                                formgroup.controls['pourAppli'].errors!['required']">
+                                pour Appli est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Pour Info.</label>
+                            <input periodicite="text" class="form-control" formControlName="pourInfo">
+                           <span class="text-danger" *ngIf="(formgroup.controls['pourInfo'].touched &&
+                            formgroup.controls['pourInfo'].errors) && 
+                                formgroup.controls['pourInfo'].errors!['required']">
+                                pourInfo est obligatoire
+                            </span> 
+                        </div>
+                        
+                        <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!formgroup.valid" type="submit" class="btn btn-success">
+                                Ajouter
+                            </button>
+                            </div>
+                            <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+</form>
+</div>
+</div>
+</div>

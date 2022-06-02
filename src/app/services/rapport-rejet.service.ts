@@ -93,5 +93,8 @@ baseUrl: String ="http://localhost:8080/rejets";
     return this.http.delete(this.baseUrl+'/CodeErreurs/'+codeErreur);
   }
  
+  getStats():Observable<any>{
+    return this.http.get(this.baseUrl+'/stats');
+  }
 
 }

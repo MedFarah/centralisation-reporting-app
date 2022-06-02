@@ -114,6 +114,7 @@
             </div>
         </div>
     </div>
+    
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" *ngIf="rapports" datatable [dtOptions]="dtOptions" width="100%"
@@ -168,7 +169,7 @@
                             </button>
     
                             <button class="btn btn-warning btn-circle btn-sm col-md-6" (click)="UpdateRapportPP(rapport.numeroDeclaration)">
-                                <i class="fas fa-exclamation-triangle"></i>
+                                <i class="fas fa-edit"></i>
                             </button>
 
                             <button class="btn btn-info btn-circle btn-sm col-md-6" (click)="DetailRapportPP(rapport.numeroDeclaration)">

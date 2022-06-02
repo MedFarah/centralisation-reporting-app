@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Modifier Historique</h6>
+    </div>
+<div class="card-body">
+<form [formGroup]="formgroup" (ngSubmit)="updateHistorique()">
+    <div class="form-group">
+                            <label>Version</label>
+                            <input type="text" class="form-control" formControlName="version" [ngModel]="historique.version">
+                           <span class="text-danger" *ngIf="(formgroup.controls['version'].touched &&
+                            formgroup.controls['version'].errors) && 
+                                formgroup.controls['version'].errors!['required']">
+                                Version est obligatoire
+                            </span> 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Modification</label>
+                            <input type="text" class="form-control" formControlName="modification" [ngModel]="historique.modification">
+                           <span class="text-danger" *ngIf="(formgroup.controls['modification'].touched &&
+                            formgroup.controls['modification'].errors) && 
+                                formgroup.controls['modification'].errors!['required']">
+                                Modification est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" class="form-control" formControlName="date" [ngModel]="historique.date">
+                           <span class="text-danger" *ngIf="(formgroup.controls['date'].touched &&
+                            formgroup.controls['date'].errors) && 
+                                formgroup.controls['date'].errors!['required']">
+                                dATE est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Origine</label>
+                            <input type="text" class="form-control" formControlName="origine" [ngModel]="historique.origine">
+                           <span class="text-danger" *ngIf="(formgroup.controls['origine'].touched &&
+                            formgroup.controls['origine'].errors) && 
+                                formgroup.controls['origine'].errors!['required']">
+                                origine est obligatoire
+                            </span> 
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!formgroup.valid" type="submit" class="btn btn-success">
+                                Modifier
+                            </button>
+                            </div>
+                            <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+</form>
+</div>
+</div>
+</div>

@@ -22,6 +22,7 @@ export class RapportPPRejetComponent implements OnInit {
   rapports! : RapportPP[];
   nbrRejets!: number;
   codeError?: Array<CodeErreurRapport>;
+  stats!:any;
 
   
   message = '';
@@ -33,6 +34,13 @@ export class RapportPPRejetComponent implements OnInit {
    }
    
   ngOnInit(): void {
+    this.service.getStats().subscribe(res=>{
+      this.stats=res;
+      console.log(res);
+    });
+
+   
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,

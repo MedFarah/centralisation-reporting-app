@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ajouter Déclaration caractéristique</h6>
+    </div>
+<div class="card-body">
+<form [formGroup]="formgroup" (ngSubmit)="ajoutDeclaration()">
+    <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" formControlName="description">
+                           <span class="text-danger" *ngIf="(formgroup.controls['description'].touched &&
+                            formgroup.controls['description'].errors) && 
+                                formgroup.controls['description'].errors!['required']">
+                                Description est obligatoire
+                            </span> 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Domaine</label>
+                            <input type="text" class="form-control" formControlName="domaine">
+                           <span class="text-danger" *ngIf="(formgroup.controls['domaine'].touched &&
+                            formgroup.controls['domaine'].errors) && 
+                                formgroup.controls['domaine'].errors!['required']">
+                                domaine est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Etat d'envoie</label>
+                            <input type="text" class="form-control" formControlName="etatEnvoie">
+                           <span class="text-danger" *ngIf="(formgroup.controls['etatEnvoie'].touched &&
+                            formgroup.controls['etatEnvoie'].errors) && 
+                                formgroup.controls['etatEnvoie'].errors!['required']">
+                                etat Envoie est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input type="text" class="form-control" formControlName="type">
+                           <span class="text-danger" *ngIf="(formgroup.controls['type'].touched &&
+                            formgroup.controls['type'].errors) && 
+                                formgroup.controls['type'].errors!['required']">
+                                type est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Mode De Lancement</label>
+                            <input modeDeLancement="text" class="form-control" formControlName="modeDeLancement">
+                           <span class="text-danger" *ngIf="(formgroup.controls['modeDeLancement'].touched &&
+                            formgroup.controls['modeDeLancement'].errors) && 
+                                formgroup.controls['modeDeLancement'].errors!['required']">
+                                modeDeLancement est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Periodicité</label>
+                            <input periodicite="text" class="form-control" formControlName="periodicite">
+                           <span class="text-danger" *ngIf="(formgroup.controls['periodicite'].touched &&
+                            formgroup.controls['periodicite'].errors) && 
+                                formgroup.controls['periodicite'].errors!['required']">
+                                periodicité est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Destinataire</label>
+                            <input destinataire="text" class="form-control" formControlName="destinataire">
+                           <span class="text-danger" *ngIf="(formgroup.controls['destinataire'].touched &&
+                            formgroup.controls['destinataire'].errors) && 
+                                formgroup.controls['destinataire'].errors!['required']">
+                                destinataire est obligatoire
+                            </span> 
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!formgroup.valid" type="submit" class="btn btn-success">
+                                Ajouter
+                            </button>
+                            </div>
+                            <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+</form>
+</div>
+</div>
+</div>

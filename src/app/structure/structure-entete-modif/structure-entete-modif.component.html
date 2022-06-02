@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">modifier entete</h6>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="UpdateForm" (ngSubmit)="updateStruct()">
+                    
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Designation</label>
+                            <input type="text" class="form-control" formControlName="designation" [(ngModel)]="structureEntete.designation">
+                            <span class="text-danger" *ngIf="(UpdateForm.controls['designation'].touched &&
+                           UpdateForm.controls['designation'].errors) && 
+                           UpdateForm.controls['designation'].errors!['required']">
+                            Designation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type</label>
+                            <input type="text" class="form-control" formControlName="type" [(ngModel)]="structureEntete.type">
+                            <span class="text-danger" *ngIf="(UpdateForm.controls['type'].touched &&
+                           UpdateForm.controls['type'].errors) && 
+                           UpdateForm.controls['type'].errors!['required']">
+                                Type est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Taille</label>
+                            <input type="text" class="form-control" formControlName="taille" [(ngModel)]="structureEntete.taille">
+                            <span class="text-danger" *ngIf="(UpdateForm.controls['taille'].touched &&
+                           UpdateForm.controls['taille'].errors) && 
+                           UpdateForm.controls['taille'].errors!['required']">
+                                Taille est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Regle DeGestion</label>
+                            <input type="text" class="form-control" formControlName="table" [(ngModel)]="structureEntete.regleDeGestion">
+                            <span class="text-danger" *ngIf="(UpdateForm.controls['regleDeGestion'].touched &&
+                           UpdateForm.controls['regleDeGestion'].errors) && 
+                           UpdateForm.controls['regleDeGestion'].errors!['required']">
+                                regle DeGestion est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                   
+
+                    <div class="form-group">
+                        <label>Commentaire</label>
+                        <input type="text" class="form-control" formControlName="commentaire" [(ngModel)]="structureEntete.commentaire">
+                        <span class="text-danger" *ngIf="(UpdateForm.controls['commentaire'].touched &&
+                           UpdateForm.controls['commentaire'].errors) && 
+                           UpdateForm.controls['commentaire'].errors!['required']">
+                            commentaire est obligatoire
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>entete Type</label>
+                        <select (change)="changeType($event)" class="select" formControlName="corpType" [(ngModel)]="structureEntete.enteteType">
+                            <option value="">Choisir Type</option>
+                            <option *ngFor="let corp of CorpType" [ngValue]="corp">
+                                {{ corp }}
+                              </option>
+                            </select>
+                        <span class="text-danger" *ngIf=" corpType?.invalid">
+                            corpType est obligatoire
+                        </span>
+                    </div>
+
+                       
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!UpdateForm.valid" type="submit" class="btn btn-success">
+                                Update
+                            </button>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    

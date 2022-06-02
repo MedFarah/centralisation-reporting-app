@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ajouter structure ligne entete</h6>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="addStructureEnteteFormGroup" (ngSubmit)="addStructureEntete()">
+                    
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Designation</label>
+                            <input type="text" class="form-control" formControlName="designation">
+                            <span class="text-danger" *ngIf="(addStructureEnteteFormGroup.controls['designation'].touched &&
+                           addStructureEnteteFormGroup.controls['designation'].errors) && 
+                           addStructureEnteteFormGroup.controls['designation'].errors!['required']">
+                            Designation est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Type</label>
+                            <input type="text" class="form-control" formControlName="type">
+                            <span class="text-danger" *ngIf="(addStructureEnteteFormGroup.controls['type'].touched &&
+                           addStructureEnteteFormGroup.controls['type'].errors) && 
+                           addStructureEnteteFormGroup.controls['type'].errors!['required']">
+                                Type est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Taille</label>
+                            <input type="text" class="form-control" formControlName="taille">
+                            <span class="text-danger" *ngIf="(addStructureEnteteFormGroup.controls['taille'].touched &&
+                           addStructureEnteteFormGroup.controls['taille'].errors) && 
+                           addStructureEnteteFormGroup.controls['taille'].errors!['required']">
+                                Taille est obligatoire
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Table</label>
+                            <input type="text" class="form-control" formControlName="table">
+                            <span class="text-danger" *ngIf="(addStructureEnteteFormGroup.controls['table'].touched &&
+                           addStructureEnteteFormGroup.controls['table'].errors) && 
+                           addStructureEnteteFormGroup.controls['table'].errors!['required']">
+                                Table est obligatoire
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Regle DeGestion</label>
+                        <input type="text" class="form-control" formControlName="regleDeGestion">
+                        <span class="text-danger" *ngIf="(addStructureEnteteFormGroup.controls['regleDeGestion'].touched &&
+                           addStructureEnteteFormGroup.controls['regleDeGestion'].errors) && 
+                           addStructureEnteteFormGroup.controls['regleDeGestion'].errors!['required']">
+                            regle DeGestion est obligatoire
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Commentaire</label>
+                        <input type="text" class="form-control" formControlName="commentaire">
+                        <span class="text-danger" *ngIf="(addStructureEnteteFormGroup.controls['commentaire'].touched &&
+                           addStructureEnteteFormGroup.controls['commentaire'].errors) && 
+                           addStructureEnteteFormGroup.controls['commentaire'].errors!['required']">
+                            commentaire est obligatoire
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Entete Type</label>
+                        <select (change)="changeType($event)" class="select" formControlName="enteteType">
+                            <option value="">Choisir Type</option>
+                            <option *ngFor="let corp of CorpType" [ngValue]="corp">
+                                {{ corp }}
+                              </option>
+                            </select>
+                        <span class="text-danger" *ngIf=" corpType?.invalid">
+                            Entete Type est obligatoire
+                        </span>
+                    </div>
+
+                       
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!addStructureEnteteFormGroup.valid" type="submit" class="btn btn-success">
+                                Ajouter
+                            </button>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    

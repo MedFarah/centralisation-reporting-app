@@ -6,22 +6,47 @@ import { Fin } from 'src/app/models/fin.model';
 import { RapportPP } from 'src/app/models/rapportPersonnePhysique.model';
 import { RapportService } from 'src/app/services/rapport.service';
 import Swal from 'sweetalert2';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-rapport-pp-ajout',
   templateUrl: './rapport-pp-ajout.component.html',
-  styleUrls: ['./rapport-pp-ajout.component.css']
+  styleUrls: ['./rapport-pp-ajout.component.css'],
+  providers : [DatePipe]
 })
 export class RapportPPAjoutComponent implements OnInit {
 
   ajoutRapportPPFormGroup!: FormGroup;
   entete!: Entete;
   fin!: Fin;
+  minDate!: any;
+  maxDate!: any;
+  datee!:Date;
+  datea:any;
 
-  constructor(private rapportService: RapportService, private router: Router, private fb: FormBuilder) { }
+  constructor(private rapportService: RapportService, private router: Router, private fb: FormBuilder,private datePipe: DatePipe) { }
 
 
   ngOnInit(): void {
+    let date = new Date;
+    this.datea = new Date().toISOString().slice(0, 10);
+    this.datee = new Date();
+    let latest_date =this.datePipe.transform(date, 'dd/MM/yyyy');console.log( 'icii '+latest_date);
+    this.maxDate = latest_date;
+    //new Date(1527445800000).getFullYear()+'-'+('0' + (new Date(1527445800000).getMonth() + 1)).slice(-2)+'-'+('0' + new Date(1527445800000).getDate()).slice(-2);
+
+    const currentYear = new Date();
+    this.datee=currentYear;
+    console.log(this.datee);
+   // console.log(formatDate(new Date(), 'dd/MM/yyyy','en'));
+    //this.minDate = new Date(currentYear - 1, 0, 1);
+    let ChangedFormat = this.datePipe.transform(currentYear, 'dd/MM/YYYY');
+   // this.maxDate = new Date();
+    console.log(this.maxDate);
+  
+
+
+    console.log(ChangedFormat);
     this.ajoutRapportPPFormGroup = this.fb.group({
       numeroDeclaration: this.fb.control(null, Validators.required),
       codeEnregistrement: this.fb.control(105, Validators.required),

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ajouter Approbation</h6>
+    </div>
+<div class="card-body">
+<form [formGroup]="formgroup" (ngSubmit)="updateApprobation()">
+    <div class="form-group">
+                            <label>Entité</label>
+                            <input type="text" class="form-control" formControlName="entite" [ngModel]="approbation.entite">
+                           <span class="text-danger" *ngIf="(formgroup.controls['entite'].touched &&
+                            formgroup.controls['entite'].errors) && 
+                                formgroup.controls['entite'].errors!['required']">
+                                Entité est obligatoire
+                            </span> 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" formControlName="nom" [ngModel]="approbation.nom">
+                           <span class="text-danger" *ngIf="(formgroup.controls['nom'].touched &&
+                            formgroup.controls['nom'].errors) && 
+                                formgroup.controls['nom'].errors!['required']">
+                                Nom est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" class="form-control" formControlName="date" [ngModel]="approbation.date">
+                           <span class="text-danger" *ngIf="(formgroup.controls['date'].touched &&
+                            formgroup.controls['date'].errors) && 
+                                formgroup.controls['date'].errors!['required']">
+                                dATE est obligatoire
+                            </span> 
+                        </div>
+                        <div class="form-group">
+                            <label>sIGNATURE</label>
+                            <input type="text" class="form-control" formControlName="signature" [ngModel]="approbation.signature">
+                           <span class="text-danger" *ngIf="(formgroup.controls['signature'].touched &&
+                            formgroup.controls['signature'].errors) && 
+                                formgroup.controls['signature'].errors!['required']">
+                                Signature est obligatoire
+                            </span> 
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-2">
+                            <button [disabled]="!formgroup.valid" type="submit" class="btn btn-success">
+                                Modifier
+                            </button>
+                            </div>
+                            <div class="form-group col-md-2">
+                            <button class="btn btn-light btn-icon-split" (click)="ViderForm()">Cancel</button>
+                        </div>
+                    </div>
+</form>
+</div>
+</div>
+</div>
