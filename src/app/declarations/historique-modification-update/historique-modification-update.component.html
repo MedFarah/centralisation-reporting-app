@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <label>Date</label>
-                            <input type="date" class="form-control" formControlName="date" [ngModel]="historique.date">
+                            <input type="date" class="form-control" formControlName="date" [ngModel]="historique.date  | date:'yyyy-MM-dd'">
                            <span class="text-danger" *ngIf="(formgroup.controls['date'].touched &&
                             formgroup.controls['date'].errors) && 
                                 formgroup.controls['date'].errors!['required']">

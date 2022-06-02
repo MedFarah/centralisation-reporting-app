@@ -38,6 +38,7 @@ export class ListeDestinataireUpdateComponent implements OnInit {
 
   updateListeDestinataire(){
     let entity:ListeDestinataires = this.formgroup.value;
+    entity.id=this.id;
     if(this.formgroup.valid){
       this.service.updateListeDestinataires(entity).subscribe(res=>{
 

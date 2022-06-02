@@ -59,7 +59,7 @@ export class DeclarationListComponent implements OnInit {
 
 
   UpdateDeclaration(id:string){
-    this.router.navigate(['/declaration/', id]);
+    this.router.navigate(['/declarationUpdate/', id]);
   }
 
 }

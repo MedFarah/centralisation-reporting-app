@@ -39,11 +39,12 @@ export class DeclarationModfierComponent implements OnInit {
 
   updateDeclaration(){
     let entity:Declaration = this.formgroup.value;
+    entity.id=this.id;
     if(this.formgroup.valid){
       this.service.updateDeclaration(entity).subscribe(res=>{
 
         Swal.fire('success!!').then(msg=>{this.router.navigateByUrl('/declaration');})
-        this.router.navigate(['/approbation']);},error=>{
+       },error=>{
           alert("error server!");
       });
     }

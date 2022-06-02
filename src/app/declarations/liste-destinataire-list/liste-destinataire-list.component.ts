@@ -58,7 +58,7 @@ export class ListeDestinataireListComponent implements OnInit {
 
 
   UpdateListeDestinataire(id:string){
-
+    this.router.navigate(['/destinataireUpdate/', id]);
   }
 
 }

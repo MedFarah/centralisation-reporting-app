@@ -9,9 +9,9 @@ import { RapportRejetService } from 'src/app/services/rapport-rejet.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-nbrRejetOD!:number;
-nbrRejetPP!:number;
-nbrRejetPM!:number;
+nbrRejetOD:number =7;
+nbrRejetPP:number =9;
+nbrRejetPM:number =15;
 od? : number;
   constructor(private service:RapportRejetService) { }
 
@@ -35,7 +35,7 @@ od? : number;
           labels: ['Opération Devise', 'Personne Physique', 'Personne morale'],
           datasets: [{
               label: '# of Votes',
-              data: [7,77,this.nbrRejetPM],
+              data: [this.nbrRejetOD,this.nbrRejetPP,this.nbrRejetPM],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',

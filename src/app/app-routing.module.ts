@@ -5,10 +5,18 @@ import { CodeErreurListComponent } from './codeErreurBCT/code-erreur-list/code-e
 import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifier/code-erreur-modifier.component';
 import { RapportRejetComponent } from './components/rapport-rejet/rapport-rejet.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { ApprobationDocumentAjoutComponent } from './declarations/approbation-document-ajout/approbation-document-ajout.component';
 import { ApprobationDocumentListComponent } from './declarations/approbation-document-list/approbation-document-list.component';
+import { ApprobationDocumentModifierComponent } from './declarations/approbation-document-modifier/approbation-document-modifier.component';
+import { DeclarationAjouterComponent } from './declarations/declaration-ajouter/declaration-ajouter.component';
 import { DeclarationListComponent } from './declarations/declaration-list/declaration-list.component';
+import { DeclarationModfierComponent } from './declarations/declaration-modfier/declaration-modfier.component';
 import { HistoriqueModificationListComponent } from './declarations/historique-modification-list/historique-modification-list.component';
+import { HistoriqueModificationNewComponent } from './declarations/historique-modification-new/historique-modification-new.component';
+import { HistoriqueModificationUpdateComponent } from './declarations/historique-modification-update/historique-modification-update.component';
 import { ListeDestinataireListComponent } from './declarations/liste-destinataire-list/liste-destinataire-list.component';
+import { ListeDestinataireNewComponent } from './declarations/liste-destinataire-new/liste-destinataire-new.component';
+import { ListeDestinataireUpdateComponent } from './declarations/liste-destinataire-update/liste-destinataire-update.component';
 import { RapportPMRejetComponent } from './rapport-pmrejet/rapport-pmrejet.component';
 import { RapportPPRejetComponent } from './rapport-pp-rejet/rapport-pp-rejet.component';
 import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rapport-od-ajouter.component';
@@ -63,9 +71,17 @@ const routes: Routes = [
   {path : 'structure/finUpdate/:id' , component : StructureFinModifComponent},
   {path : 'dashboard' , component : DashboardComponent},
   {path : 'approbation' , component : ApprobationDocumentListComponent},
+  {path : 'approbationAdd', component : ApprobationDocumentAjoutComponent},
+  {path : 'approbationUpdate/:id' , component : ApprobationDocumentModifierComponent},
   {path : 'declaration' , component : DeclarationListComponent},
+  {path : 'declarationAdd', component : DeclarationAjouterComponent},
+  {path : 'declarationUpdate/:id', component : DeclarationModfierComponent},
   {path : 'historique', component : HistoriqueModificationListComponent},
-  {path : 'destinataire', component : ListeDestinataireListComponent}
+  {path : 'historiqueAdd', component : HistoriqueModificationNewComponent},
+  {path : 'historiqueUpdate/:id', component : HistoriqueModificationUpdateComponent},
+  {path : 'destinataire', component : ListeDestinataireListComponent},
+  {path : 'destinataireAdd', component : ListeDestinataireNewComponent},
+  {path : 'destinataireUpdate/:id', component : ListeDestinataireUpdateComponent}
 ];
 
 @NgModule({

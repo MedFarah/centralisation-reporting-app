@@ -36,6 +36,7 @@ export class HistoriqueModificationUpdateComponent implements OnInit {
 
   updateHistorique(){
     let entity:HistoriqueModifications = this.formgroup.value;
+    entity.id=this.id;
     if(this.formgroup.valid){
       this.service.updateHistoriqueModifications(entity).subscribe(res=>{
 

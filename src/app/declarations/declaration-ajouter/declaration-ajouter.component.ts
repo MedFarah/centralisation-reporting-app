@@ -33,7 +33,7 @@ export class DeclarationAjouterComponent implements OnInit {
       this.service.createDeclaration(entity).subscribe(res=>{
 
         alert("success");
-        this.router.navigate(['/approbation']);},error=>{
+        this.router.navigate(['/declaration']);},error=>{
           alert("error server!");
       });
     }

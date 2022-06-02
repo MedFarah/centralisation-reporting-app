@@ -2,10 +2,11 @@
     <div class="row">
         <div class="card shadow ">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">ajouter Approbation</h6>
+        <h6 class="m-0 font-weight-bold text-primary">modifier Approbation </h6>
     </div>
 <div class="card-body">
 <form [formGroup]="formgroup" (ngSubmit)="updateApprobation()">
+    <input type="text" class="form-control" formControlName="entite" [ngModel]="approbation.id" [hidden]="true">
     <div class="form-group">
                             <label>Entité</label>
                             <input type="text" class="form-control" formControlName="entite" [ngModel]="approbation.entite">
@@ -27,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label>Date</label>
-                            <input type="date" class="form-control" formControlName="date" [ngModel]="approbation.date">
+                            <input type="date" class="form-control" formControlName="date" [ngModel]="approbation.date  | date:'yyyy-MM-dd'">
                            <span class="text-danger" *ngIf="(formgroup.controls['date'].touched &&
                             formgroup.controls['date'].errors) && 
                                 formgroup.controls['date'].errors!['required']">
@@ -35,7 +36,7 @@
                             </span> 
                         </div>
                         <div class="form-group">
-                            <label>sIGNATURE</label>
+                            <label>Signature</label>
                             <input type="text" class="form-control" formControlName="signature" [ngModel]="approbation.signature">
                            <span class="text-danger" *ngIf="(formgroup.controls['signature'].touched &&
                             formgroup.controls['signature'].errors) && 

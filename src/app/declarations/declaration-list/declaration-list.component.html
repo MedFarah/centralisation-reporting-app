@@ -1,6 +1,6 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Ligne entete Structure</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Déclaration</h6>
         <div class="dropdown no-arrow">
             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -9,7 +9,7 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                 aria-labelledby="dropdownMenuLink">
                 <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" [routerLink]="['/structure/enteteAdd']">Ajouter Ligne entete structure</a>
+                <a class="dropdown-item" [routerLink]="['/declarationAdd']">Ajouter caractéristique de déclaration</a>
                
                 <div class="dropdown-divider"></div>
                 
@@ -51,7 +51,7 @@
                     <tr *ngFor="let t of tab">
                         <td>{{ t.description }}</td>
                         <td>{{ t.domaine }}</td>
-                        <td>{{ t.etatEnvoie  | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{ t.etatEnvoie }}</td>
                         <td>{{ t.type }}</td>
                         <td>{{ t.modeDeLancement }}</td>
                         <td>{{ t.periodicite }}</td>

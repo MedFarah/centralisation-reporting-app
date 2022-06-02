@@ -56,12 +56,9 @@ export class ApprobationDocumentListComponent implements OnInit {
     });
   }
 
-  addApprobation(){
-
-  }
 
   UpdateApprobation(id:string){
-
+    this.router.navigate(['/approbationUpdate/', id]);
   }
 
 }

@@ -59,7 +59,7 @@ export class HistoriqueModificationListComponent implements OnInit {
 
 
   UpdateHistorique(id:string){
-    this.router.navigate(['/historique/', id]);
+    this.router.navigate(['/historiqueUpdate/', id]);
   }
 
 
