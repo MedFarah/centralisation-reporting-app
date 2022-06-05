@@ -1,0 +1,80 @@
+
+    
+
+    <!-- datatable [dtOptions]="dtOptions" class="row-border hover"> -->
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Archive Personne Physique </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" *ngIf="rapports" datatable [dtOptions]="dtOptions" width="100%"
+                    cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Numero Declaration</th>
+                            <th>Code Operation</th>
+                            <th>Date Archive</th>
+
+                            <th>Code Erreur CORP</th>
+                            <th>Description Erreur Corps</th>
+
+                            <th>Code Erreur Entete</th>
+                            <th>Description Erreur Entete</th>
+
+                            <th>Code Erreur Fin</th>
+                            <th>Description Erreur Fin</th>
+                            <th></th>
+
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Numero Declaration</th>
+                            <th>Code Operation</th>
+                            <th>Date Archive</th>
+
+                            <th>Code Erreur CORP</th>
+                            <th>Description Erreur Corps</th>
+
+                            <th>Code Erreur Entete</th>
+                            <th>Description Erreur Entete</th>
+
+                            <th>Code Erreur Fin</th>
+                            <th>Description Erreur Fin</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr *ngFor="let rapport of rapports">
+                            <td>{{ rapport.numeroDeclaration }}</td>
+                            <td>{{ rapport.codeOperation }}</td>
+                            <td>{{ rapport.dateArchive | date :'dd/MM/yyyy'   }}</td>
+
+                            <td *ngFor="let p of rapport.codeErreurRapports">{{p.codeErreur}}</td>
+                            <td *ngFor="let p of rapport.codeErreurRapports"> {{ p.motif}}</td>
+
+                            <td *ngFor="let p of rapport.entete.codeErreurRapports">{{p.codeErreur}}</td>
+                            <td *ngFor="let p of rapport.entete.codeErreurRapports"> {{ p.motif}}</td>
+
+                            <td *ngFor="let p of rapport.fin.codeErreurRapports ">{{p.codeErreur ?? "my value is null"}}
+                            </td>
+                            <td *ngFor="let p of rapport.fin.codeErreurRapports"> {{ p.motif ?? "my value is null"}}
+                            </td>
+
+                            <div class="row">
+                                <button class="btn btn-danger btn-sm col-md-6" (click)="DeleteRapportPP(rapport.id)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                </div>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

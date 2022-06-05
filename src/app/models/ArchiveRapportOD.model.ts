@@ -1,9 +1,9 @@
 import { Entete } from "./entete.model";
 import { Fin } from "./fin.model";
 import { CodeErreurRapport } from "./codeErreurRapports.model";
-
-export interface RapportOperationDevise {
-
+export interface ArchiveRapportOD{
+     id:string;
+     dateArchive:Date;
     entete: Entete;
     numeroDeclaration: number;
     codeEnregistrement: number;
@@ -29,5 +29,5 @@ export interface RapportOperationDevise {
     codePaysExpediteurDesFonds?: string;
 
     fin: Fin;
-    codeErreurRapports?: any;
+    codeErreurRapports?: Array<CodeErreurRapport>;
 }

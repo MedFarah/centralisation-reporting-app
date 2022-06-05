@@ -55,13 +55,12 @@
       <h6 class="m-0 font-weight-bold text-primary">REJETS de type 910 : Rapport Operation Devise  </h6>
   </div>
   <div class="card-body">
-      <div class="table-responsive">
+      <div class="table-responsive" >
           <table class="table table-bordered" *ngIf="rapports" datatable [dtOptions]="dtOptions" width="100%" cellspacing="0">
               <thead>
                   <tr>
                       <th>Numero Declaration</th>
                       <th>Date Operation</th>
-                      <th>Num Identifiant Client</th>
 
                       <th>Code Erreur CORP</th>
                       <th>Description Erreur Corps</th>
@@ -71,15 +70,15 @@
 
                       <th>Code Erreur Fin</th>
                       <th>Description Erreur Fin</th>
+                      <th></th>
                       
                       
                   </tr>
               </thead>
               <tfoot>
-                  <tr>
+                <tr>
                     <th>Numero Declaration</th>
                     <th>Date Operation</th>
-                    <th>Num Identifiant Client</th>
 
                     <th>Code Erreur CORP</th>
                     <th>Description Erreur Corps</th>
@@ -89,26 +88,37 @@
 
                     <th>Code Erreur Fin</th>
                     <th>Description Erreur Fin</th>
-                  </tr>
+                    <th></th>
+                    
+                    
+                </tr>
               </tfoot>
-              <tbody>
-                  <tr *ngFor="let rapport of rapports">
-                    <td>{{ rapport.numeroDeclaration }}</td>
-                    <td>{{ rapport.dateOperation | date: 'dd/MM/yyyy' }}</td>
-                    <td>{{ rapport.numIdentifiantClient }}</td>
+              <tbody  >
+                 
+                  <tr *ngFor="let rapport of rapports ; let i = index">
+                    <ng-container *ngFor="let corp of rapport.codeErreurRapports; let a = index">
+                        <ng-container *ngFor="let e of rapport.entete.codeErreurRapports ; let b = index">
+                            <ng-container *ngFor="let f of rapport.fin.codeErreurRapports ; let c = index">
+                            <td > {{ rapport.numeroDeclaration }}</td>
+                            <td>{{ rapport.dateOperation | date: 'dd/MM/yyyy' }}</td>
+                            <td *ngIf="a==0">{{rapport.codeErreurRapports.codeErreur ?? "my value is null"}}</td>
+                            <td *ngIf="a==0"> {{rapport.codeErreurRapports.motif ?? "my value is null"}}</td>
 
-                    <td *ngFor="let p of rapport.codeErreurRapports">{{p.codeErreur}}</td>
-                    <td *ngFor="let p of rapport.codeErreurRapports"> {{ p.motif}}</td>
+                            <td *ngIf="b==0" >{{e.codeErreur ?? "my value is null"}}</td>
+                            <td *ngIf="b==0"> {{e.motif ?? "my value is null"}}</td>
 
-                    <td *ngFor="let p of rapport.entete.codeErreurRapports">{{p.codeErreur}}</td>
-                    <td *ngFor="let p of rapport.entete.codeErreurRapports"> {{ p.motif}}</td>
-
-                    <td *ngFor="let p of rapport.fin.codeErreurRapports ">{{p.codeErreur ?? "my value is null"}}</td>
-                    <td *ngFor="let p of rapport.fin.codeErreurRapports"> {{ p.motif ?? "my value is null"}}</td>
-
-                   
-                  
+                            <td *ngIf="c==0">{{f.codeErreur  ?? "my value is null"}}</td>
+                            <td *ngIf="c==0"> {{f.motif ?? "my value is null"}}</td>
+                            <td>
+                                <button class="btn btn-info btn-circle btn-sm " (click)="ArchiverRapport(rapport.numeroDeclaration)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                </ng-container>
+                </ng-container>
+                </ng-container>
                   </tr>
+               
                   
               </tbody>
           </table>

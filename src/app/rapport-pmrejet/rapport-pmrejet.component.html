@@ -74,7 +74,7 @@
 
                             <th>Code Erreur Fin</th>
                             <th>Description Erreur Fin</th>
-
+                                <th></th>
 
                         </tr>
                     </thead>
@@ -92,6 +92,7 @@
 
                             <th>Code Erreur Fin</th>
                             <th>Description Erreur Fin</th>
+                            <th></th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -110,7 +111,11 @@
                             </td>
                             <td *ngFor="let p of rapport.fin.codeErreurRapports"> {{ p.motif ?? "my value is null"}}
                             </td>
-
+                            <td>
+                                <button class="btn btn-info btn-circle btn-sm " (click)="ArchiverRapport(rapport.numeroDeclaration)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
 
 
                         </tr>

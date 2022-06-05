@@ -18,9 +18,10 @@ export class RapportRejetComponent implements OnInit {
   dtOptions: any = {};
   selectedFiles: any;
   currentFile: any;
-  rapports! : RapportOperationDevise[];
+  rapports : RapportOperationDevise[] = [];
+  rap!:RapportOperationDevise;
   nbrRejets!: number;
-  codeError?: Array<CodeErreurRapport>;
+  codeError: CodeErreurRapport[] = [];
 
   
   message = '';
@@ -44,13 +45,21 @@ export class RapportRejetComponent implements OnInit {
    
     this.getListFromService();
     
+    
+    
   
   }
     getListFromService(){
       this.service.getRapportsOD().subscribe(res=>{
         this.rapports = res;
+        
         this.nbrRejets = this.rapports.length;
-        console.log(this.rapports[0].codeErreurRapports);
+        this.rap=this.rapports[0];
+        this.rapports.forEach(x=>this.codeError.push(x.fin.codeErreurRapports));
+                      //  this.codeError= this.rapports.codeErreurRapports[];
+        console.log(this.codeError);
+        this.codeError.forEach(r=>console.log(r.codeErreur));
+        
         for (let p of this.rapports[0].fin.codeErreurRapports!)
         {
           console.log(p.motif);
@@ -59,6 +68,7 @@ export class RapportRejetComponent implements OnInit {
       });
       
     }
+    
 
   selectFile(event: any): void {
     this.selectedFiles = event.target.files;
@@ -102,6 +112,12 @@ export class RapportRejetComponent implements OnInit {
 
       this.selectedFiles = undefined;
     }
+  }
+
+  ArchiverRapport(id:number){
+    this.service.createArchiveOD(id).subscribe(res=>{
+      alert('success');
+    });
   }
 
 }

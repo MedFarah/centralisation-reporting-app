@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArchiveODComponent } from './archives/archive-od/archive-od.component';
+import { ArchivePMComponent } from './archives/archive-pm/archive-pm.component';
+import { ArchivePPComponent } from './archives/archive-pp/archive-pp.component';
 import { CodeErreurAjouterComponent } from './codeErreurBCT/code-erreur-ajouter/code-erreur-ajouter.component';
 import { CodeErreurListComponent } from './codeErreurBCT/code-erreur-list/code-erreur-list.component';
 import { CodeErreurModifierComponent } from './codeErreurBCT/code-erreur-modifier/code-erreur-modifier.component';
@@ -81,7 +84,10 @@ const routes: Routes = [
   {path : 'historiqueUpdate/:id', component : HistoriqueModificationUpdateComponent},
   {path : 'destinataire', component : ListeDestinataireListComponent},
   {path : 'destinataireAdd', component : ListeDestinataireNewComponent},
-  {path : 'destinataireUpdate/:id', component : ListeDestinataireUpdateComponent}
+  {path : 'destinataireUpdate/:id', component : ListeDestinataireUpdateComponent},
+  {path : 'archiveOD' , component : ArchiveODComponent},
+  {path : 'archivePP' , component : ArchivePPComponent},
+  {path : 'archivePM' , component : ArchivePMComponent}
 ];
 
 @NgModule({

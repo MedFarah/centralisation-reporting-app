@@ -7,5 +7,5 @@ export interface Entete{
     ddecl: Date;
     kmdecl: number;
     demiss: Date;
-    codeErreurRapports?: Array<CodeErreurRapport>;
+    codeErreurRapports?: any;
 }

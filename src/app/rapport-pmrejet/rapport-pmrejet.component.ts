@@ -95,5 +95,10 @@ export class RapportPMRejetComponent implements OnInit {
     }
   }
 
+ArchiverRapport(id:number){
+    this.service.createArchivePM(id).subscribe(res=>{
+      alert('success');
+    });
+  }
 
 }

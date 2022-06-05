@@ -102,5 +102,9 @@ export class RapportPPRejetComponent implements OnInit {
     }
   }
 
-
+  ArchiverRapport(id:number){
+    this.service.createArchivePP(id).subscribe(res=>{
+      alert('success');
+    });
+  }
 }

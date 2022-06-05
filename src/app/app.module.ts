@@ -55,6 +55,9 @@ import { HistoriqueModificationUpdateComponent } from './declarations/historique
 import { ListeDestinataireListComponent } from './declarations/liste-destinataire-list/liste-destinataire-list.component';
 import { ListeDestinataireNewComponent } from './declarations/liste-destinataire-new/liste-destinataire-new.component';
 import { ListeDestinataireUpdateComponent } from './declarations/liste-destinataire-update/liste-destinataire-update.component';
+import { ArchiveODComponent } from './archives/archive-od/archive-od.component';
+import { ArchivePPComponent } from './archives/archive-pp/archive-pp.component';
+import { ArchivePMComponent } from './archives/archive-pm/archive-pm.component';
    
 
 
@@ -103,7 +106,10 @@ import { ListeDestinataireUpdateComponent } from './declarations/liste-destinata
     HistoriqueModificationUpdateComponent,
     ListeDestinataireListComponent,
     ListeDestinataireNewComponent,
-    ListeDestinataireUpdateComponent
+    ListeDestinataireUpdateComponent,
+    ArchiveODComponent,
+    ArchivePPComponent,
+    ArchivePMComponent
   ],
   imports: [
     BrowserModule,
