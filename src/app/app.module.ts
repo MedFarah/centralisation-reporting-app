@@ -58,6 +58,13 @@ import { ListeDestinataireUpdateComponent } from './declarations/liste-destinata
 import { ArchiveODComponent } from './archives/archive-od/archive-od.component';
 import { ArchivePPComponent } from './archives/archive-pp/archive-pp.component';
 import { ArchivePMComponent } from './archives/archive-pm/archive-pm.component';
+import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
+import { ForgetPasswordComponent } from './security/forget-password/forget-password.component';
+import { DeclarationService } from './services/declaration.service';
+import { AuthentificationService } from './services/authentification.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuard } from './guards/auth.guard';
    
 
 
@@ -109,7 +116,10 @@ import { ArchivePMComponent } from './archives/archive-pm/archive-pm.component';
     ListeDestinataireUpdateComponent,
     ArchiveODComponent,
     ArchivePPComponent,
-    ArchivePMComponent
+    ArchivePMComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +137,12 @@ import { ArchivePMComponent } from './archives/archive-pm/archive-pm.component';
   ],
   
   providers: [RapportRejetService,
-    RapportService
+    RapportService,
+    DeclarationService,
+    AuthentificationService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+        JwtHelperService,
+        AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 import { RapportRejetService } from 'src/app/services/rapport-rejet.service';
 
 
@@ -16,6 +17,7 @@ od? : number;
   constructor(private service:RapportRejetService) { }
 
   ngOnInit(): void {
+   
     this.service.getRapportsOD().subscribe(res=>{
       this.nbrRejetOD=res.length;
       console.log(this.nbrRejetOD);

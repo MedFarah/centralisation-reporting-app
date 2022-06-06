@@ -20,6 +20,7 @@ import { HistoriqueModificationUpdateComponent } from './declarations/historique
 import { ListeDestinataireListComponent } from './declarations/liste-destinataire-list/liste-destinataire-list.component';
 import { ListeDestinataireNewComponent } from './declarations/liste-destinataire-new/liste-destinataire-new.component';
 import { ListeDestinataireUpdateComponent } from './declarations/liste-destinataire-update/liste-destinataire-update.component';
+import { AuthGuard } from './guards/auth.guard';
 import { RapportPMRejetComponent } from './rapport-pmrejet/rapport-pmrejet.component';
 import { RapportPPRejetComponent } from './rapport-pp-rejet/rapport-pp-rejet.component';
 import { RapportODAjouterComponent } from './rapportOD/rapport-od-ajouter/rapport-od-ajouter.component';
@@ -34,6 +35,7 @@ import { RapportPPAjoutComponent } from './rapportPP/rapport-pp-ajout/rapport-pp
 import { RapportPPDetailComponent } from './rapportPP/rapport-pp-detail/rapport-pp-detail.component';
 import { RapportPPListComponent } from './rapportPP/rapport-pp-list/rapport-pp-list.component';
 import { RapportPPModiferComponent } from './rapportPP/rapport-pp-modifer/rapport-pp-modifer.component';
+import { LoginComponent } from './security/login/login.component';
 import { StructureEnteteAjoutComponent } from './structure/structure-entete-ajout/structure-entete-ajout.component';
 import { StructureEnteteListComponent } from './structure/structure-entete-list/structure-entete-list.component';
 import { StructureEnteteModifComponent } from './structure/structure-entete-modif/structure-entete-modif.component';
@@ -45,49 +47,51 @@ import { StrucureCorpListComponent } from './structure/strucure-corp-list/strucu
 import { StrucureCorpModifComponent } from './structure/strucure-corp-modif/strucure-corp-modif.component';
 
 const routes: Routes = [
-  {path : 'rejet/rapportOD', component : RapportRejetComponent},
-  {path : 'rejet/rapportPP', component: RapportPPRejetComponent},
-  {path : 'rejet/rapportPM', component: RapportPMRejetComponent},
-  {path : 'rejet/codeErreur', component: CodeErreurListComponent},
-  {path : 'rejet/codeErreurAjout', component: CodeErreurAjouterComponent},
-  {path : 'rejet/codeErreurUpdate/:codeErreur', component: CodeErreurModifierComponent},
-  {path : 'rapport/rapportOD', component: RapportODListComponent},
-  {path : 'rapport/rapportODAjout', component : RapportODAjouterComponent},
-  {path : 'rapport/rapportODUpdate/:numDeclaration', component : RapportODModifierComponent},
-  {path : 'rapport/rapportODDetail/:numDeclaration', component : RapportODDetailComponent},
-  {path : 'rapport/rapportPP', component : RapportPPListComponent},
-  {path : 'rapport/rapportPPAjout', component : RapportPPAjoutComponent},
-  {path : 'rapport/rapportPPUpdate/:numDeclaration', component : RapportPPModiferComponent},
-  {path : 'rapport/rapportPPDetail/:numDeclaration', component : RapportPPDetailComponent},
-  {path : 'rapport/rapportPM', component : RapportPMListComponent},
-  {path : 'rapport/rapportPMAjout', component : RapportPMAjoutComponent},
-  {path : 'rapport/rapportPMUpdate/:numDeclaration', component : RapportPMModifierComponent},
-  {path : 'rapport/rapportPMDetail/:numDeclaration', component : RapportPMDetailComponent},
-  {path : 'structure/corp' , component : StrucureCorpListComponent},
-  {path : 'structure/corpAdd', component : StrucureCorpAjoutComponent},
-  {path : 'structure/corpUpdate/:id', component : StrucureCorpModifComponent},
-  {path : 'structure/entete', component : StructureEnteteListComponent},
-  {path : 'structure/enteteAdd', component : StructureEnteteAjoutComponent},
-  {path : 'structure/enteteUpdate/:id' , component : StructureEnteteModifComponent},
-  {path : 'structure/fin', component : StructureFinListComponent},
-  {path : 'structure/finAdd', component : StructureFinAjoutComponent},
-  {path : 'structure/finUpdate/:id' , component : StructureFinModifComponent},
-  {path : 'dashboard' , component : DashboardComponent},
-  {path : 'approbation' , component : ApprobationDocumentListComponent},
-  {path : 'approbationAdd', component : ApprobationDocumentAjoutComponent},
-  {path : 'approbationUpdate/:id' , component : ApprobationDocumentModifierComponent},
-  {path : 'declaration' , component : DeclarationListComponent},
-  {path : 'declarationAdd', component : DeclarationAjouterComponent},
-  {path : 'declarationUpdate/:id', component : DeclarationModfierComponent},
-  {path : 'historique', component : HistoriqueModificationListComponent},
-  {path : 'historiqueAdd', component : HistoriqueModificationNewComponent},
-  {path : 'historiqueUpdate/:id', component : HistoriqueModificationUpdateComponent},
-  {path : 'destinataire', component : ListeDestinataireListComponent},
-  {path : 'destinataireAdd', component : ListeDestinataireNewComponent},
-  {path : 'destinataireUpdate/:id', component : ListeDestinataireUpdateComponent},
-  {path : 'archiveOD' , component : ArchiveODComponent},
-  {path : 'archivePP' , component : ArchivePPComponent},
-  {path : 'archivePM' , component : ArchivePMComponent}
+  {path: '', redirectTo : 'dashboard' , pathMatch: 'full'},
+  {path : 'rejet/rapportOD', component : RapportRejetComponent, canActivate: [AuthGuard]},
+  {path : 'rejet/rapportPP', component: RapportPPRejetComponent , canActivate: [AuthGuard]},
+  {path : 'rejet/rapportPM', component: RapportPMRejetComponent , canActivate: [AuthGuard]},
+  {path : 'rejet/codeErreur', component: CodeErreurListComponent, canActivate: [AuthGuard]},
+  {path : 'rejet/codeErreurAjout', component: CodeErreurAjouterComponent, canActivate: [AuthGuard]},
+  {path : 'rejet/codeErreurUpdate/:codeErreur', component: CodeErreurModifierComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportOD', component: RapportODListComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportODAjout', component : RapportODAjouterComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportODUpdate/:numDeclaration', component : RapportODModifierComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportODDetail/:numDeclaration', component : RapportODDetailComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPP', component : RapportPPListComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPPAjout', component : RapportPPAjoutComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPPUpdate/:numDeclaration', component : RapportPPModiferComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPPDetail/:numDeclaration', component : RapportPPDetailComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPM', component : RapportPMListComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPMAjout', component : RapportPMAjoutComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPMUpdate/:numDeclaration', component : RapportPMModifierComponent, canActivate: [AuthGuard]},
+  {path : 'rapport/rapportPMDetail/:numDeclaration', component : RapportPMDetailComponent, canActivate: [AuthGuard]},
+  {path : 'structure/corp' , component : StrucureCorpListComponent, canActivate: [AuthGuard]},
+  {path : 'structure/corpAdd', component : StrucureCorpAjoutComponent, canActivate: [AuthGuard]},
+  {path : 'structure/corpUpdate/:id', component : StrucureCorpModifComponent, canActivate: [AuthGuard]},
+  {path : 'structure/entete', component : StructureEnteteListComponent, canActivate: [AuthGuard]},
+  {path : 'structure/enteteAdd', component : StructureEnteteAjoutComponent, canActivate: [AuthGuard]},
+  {path : 'structure/enteteUpdate/:id' , component : StructureEnteteModifComponent, canActivate: [AuthGuard]},
+  {path : 'structure/fin', component : StructureFinListComponent, canActivate: [AuthGuard]},
+  {path : 'structure/finAdd', component : StructureFinAjoutComponent, canActivate: [AuthGuard]},
+  {path : 'structure/finUpdate/:id' , component : StructureFinModifComponent, canActivate: [AuthGuard]},
+  {path : 'dashboard' , component : DashboardComponent, canActivate: [AuthGuard]},
+  {path : 'approbation' , component : ApprobationDocumentListComponent, canActivate: [AuthGuard]},
+  {path : 'approbationAdd', component : ApprobationDocumentAjoutComponent, canActivate: [AuthGuard]},
+  {path : 'approbationUpdate/:id' , component : ApprobationDocumentModifierComponent, canActivate: [AuthGuard]},
+  {path : 'declaration' , component : DeclarationListComponent, canActivate: [AuthGuard]},
+  {path : 'declarationAdd', component : DeclarationAjouterComponent, canActivate: [AuthGuard]},
+  {path : 'declarationUpdate/:id', component : DeclarationModfierComponent, canActivate: [AuthGuard]},
+  {path : 'historique', component : HistoriqueModificationListComponent, canActivate: [AuthGuard]},
+  {path : 'historiqueAdd', component : HistoriqueModificationNewComponent, canActivate: [AuthGuard]},
+  {path : 'historiqueUpdate/:id', component : HistoriqueModificationUpdateComponent, canActivate: [AuthGuard]},
+  {path : 'destinataire', component : ListeDestinataireListComponent, canActivate: [AuthGuard]},
+  {path : 'destinataireAdd', component : ListeDestinataireNewComponent, canActivate: [AuthGuard]},
+  {path : 'destinataireUpdate/:id', component : ListeDestinataireUpdateComponent, canActivate: [AuthGuard]},
+  {path : 'archiveOD' , component : ArchiveODComponent, canActivate: [AuthGuard]},
+  {path : 'archivePP' , component : ArchivePPComponent, canActivate: [AuthGuard]},
+  {path : 'archivePM' , component : ArchivePMComponent, canActivate: [AuthGuard]},
+  {path : 'auth' , component : LoginComponent}
 ];
 
 @NgModule({
