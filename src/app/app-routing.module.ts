@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArchiveODComponent } from './archives/archive-od/archive-od.component';
 import { ArchivePMComponent } from './archives/archive-pm/archive-pm.component';
@@ -36,6 +36,7 @@ import { RapportPPDetailComponent } from './rapportPP/rapport-pp-detail/rapport-
 import { RapportPPListComponent } from './rapportPP/rapport-pp-list/rapport-pp-list.component';
 import { RapportPPModiferComponent } from './rapportPP/rapport-pp-modifer/rapport-pp-modifer.component';
 import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
 import { StructureEnteteAjoutComponent } from './structure/structure-entete-ajout/structure-entete-ajout.component';
 import { StructureEnteteListComponent } from './structure/structure-entete-list/structure-entete-list.component';
 import { StructureEnteteModifComponent } from './structure/structure-entete-modif/structure-entete-modif.component';
@@ -91,7 +92,8 @@ const routes: Routes = [
   {path : 'archiveOD' , component : ArchiveODComponent, canActivate: [AuthGuard]},
   {path : 'archivePP' , component : ArchivePPComponent, canActivate: [AuthGuard]},
   {path : 'archivePM' , component : ArchivePMComponent, canActivate: [AuthGuard]},
-  {path : 'auth' , component : LoginComponent}
+  {path : 'auth' , component : LoginComponent},
+  {path : 'register', component : RegisterComponent}
 ];
 
 @NgModule({

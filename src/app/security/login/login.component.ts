@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     //  console.log(this.authService.isAuthenticated());
       this.router.navigateByUrl('/dashboard');
      
+     
     //  this.authService.saveToken(jwtToken);
      // this.router.navigateByUrl('/');
     },err=>{
@@ -41,7 +42,5 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logout(){
-    localStorage.removeItem('token');
-  }
+ 
 }

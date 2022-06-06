@@ -18,5 +18,6 @@ constructor(private route:Router,private authService:AuthentificationService){}
   logout(){
     localStorage.removeItem('token');
     this.route.navigateByUrl('/auth');
+    window.location.reload();
   }
 }
