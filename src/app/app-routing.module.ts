@@ -93,7 +93,7 @@ const routes: Routes = [
   {path : 'archivePP' , component : ArchivePPComponent, canActivate: [AuthGuard]},
   {path : 'archivePM' , component : ArchivePMComponent, canActivate: [AuthGuard]},
   {path : 'auth' , component : LoginComponent},
-  {path : 'register', component : RegisterComponent}
+  {path : 'signup', component : RegisterComponent}
 ];
 
 @NgModule({

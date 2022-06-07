@@ -14,8 +14,12 @@
                     <form class="user" [formGroup]="addUserForm" (ngSubmit)="registerUser()">
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                <input type="text" class="form-control form-control-user" id="exampleFirstName" formControlName="username"
                                     placeholder="First Name">
+                                    <span class="text-danger" *ngIf="(addUserForm.get('username')!.touched &&
+                                addUserForm.get('username')!.errors) ">
+                                username est  obligatoire
+                                    </span>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-user" id="exampleLastName"
@@ -23,20 +27,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" formControlName="email"
                                 placeholder="Email Address">
+                                <span class="text-danger" *ngIf="(addUserForm.get('email')!.touched &&
+                                addUserForm.get('email')!.errors) ">
+                                       Email non valide et  obligatoire
+                                    </span>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="password" class="form-control form-control-user"
+                                <input type="password" class="form-control form-control-user" formControlName="password" (change)="onPasswordChange()"
                                     id="exampleInputPassword" placeholder="Password">
                             </div>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control form-control-user"
-                                    id="exampleRepeatPassword" placeholder="Repeat Password">
+                                <input type="password" class="form-control form-control-user" formControlName="confirmPassword" (change)="onPasswordChange()"
+                                    id="exampleRepeatPassword" placeholder="Repeat Password" >
+                                    <span  class="text-danger" *ngIf="confirm_password.hasError('mismatch')">Password do not match.</span>
+
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-user btn-block" type="submit">
+                        <button class="btn btn-primary btn-user btn-block" type="submit" [disabled]="!addUserForm.valid">
                             Register Account
                         </button>
                         <hr>
