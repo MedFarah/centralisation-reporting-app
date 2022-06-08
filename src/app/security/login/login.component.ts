@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       let jwtToken = res.headers.get('Authorization');
       this.authService.saveToken(jwtToken);
       localStorage.setItem('username',user.username);
+      localStorage.setItem('id',user.id);
       console.log(jwtToken);
     //  console.log(this.authService.isAuthenticated());
       this.router.navigateByUrl('/dashboard');

@@ -39,4 +39,9 @@ export class AuthentificationService {
   }
    return false ;
   }
+
+  deleteUser(id: string): Observable<any> {
+    return this.http.delete(this.baseUrl + '/users/' + id);
+  }
+
 }
