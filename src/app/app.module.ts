@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataTablesModule } from 'angular-datatables';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RapportRejetComponent } from './components/rapport-rejet/rapport-rejet.component';
 import { RapportPPRejetComponent } from './rapport-pp-rejet/rapport-pp-rejet.component';
 import { RapportRejetService } from './services/rapport-rejet.service';
@@ -65,6 +65,7 @@ import { DeclarationService } from './services/declaration.service';
 import { AuthentificationService } from './services/authentification.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth.guard';
+import { AuthInterceptor } from './services/auth.interceptor';
    
 
 
@@ -142,7 +143,12 @@ import { AuthGuard } from './guards/auth.guard';
     AuthentificationService,
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
         JwtHelperService,
-        AuthGuard
+        AuthGuard,
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: AuthInterceptor,
+          multi: true
+         }
   ],
   bootstrap: [AppComponent]
 })

@@ -41,7 +41,7 @@ export class AuthentificationService {
   }
 
   deleteUser(id: string): Observable<any> {
-    return this.http.delete(this.baseUrl + '/users/' + id);
+    return this.http.delete(this.baseUrl + '/users/' + id,{headers:new HttpHeaders({'authorization':this.jwtToken})});
   }
 
 }

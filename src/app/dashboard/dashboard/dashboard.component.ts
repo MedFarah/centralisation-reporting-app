@@ -17,7 +17,7 @@ od? : number;
   constructor(private service:RapportRejetService) { }
 
   ngOnInit(): void {
-   
+   console.log(localStorage.getItem('token'));
     this.service.getRapportsOD().subscribe(res=>{
       this.nbrRejetOD=res.length;
       console.log(this.nbrRejetOD);

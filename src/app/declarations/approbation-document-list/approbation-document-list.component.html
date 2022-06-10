@@ -6,12 +6,11 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                aria-labelledby="dropdownMenuLink">
-                <div class="dropdown-header">Dropdown Header:</div>
-                <a class="dropdown-item" [routerLink]="['/approbationAdd']">Ajouter Liste des approbations</a>
+            <div >
                
-                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/approbationAdd']">Ajouter Liste des approbations</a>
+               
+                <div></div>
                 
             </div>
         </div>
@@ -53,12 +52,12 @@
                         <div class="row">
                            
                             <a class="btn btn-danger btn-sm col-md-3" (click)="DeleteApprobation(t.id)">
-                                <i class="fas fa-trash"></i> 
+                                <i class="fas fa-trash">delete</i> 
                             </a>
                        
-                            <button class="btn btn-warning btn-circle btn-sm col-md-6" (click)="UpdateApprobation(t.id)">
+                            <a class="btn btn-warning btn-circle btn-sm col-md-3" (click)="UpdateApprobation(t.id)">
                                 <i class="fas fa-edit"></i>
-                            </button>
+                            </a>
                      
                        
                             
