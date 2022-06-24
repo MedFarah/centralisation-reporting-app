@@ -10,7 +10,7 @@ import { ListeDestinataires } from '../models/listeDestinataire.model';
   providedIn: 'root'
 })
 export class DeclarationService {
-  baseUrl: String = "http://desktop-1mv8rqn:8082";
+  baseUrl: String = "http://desktop-25eprh3:8082";
   jwtToken: any = localStorage.getItem('token');
   constructor(private http: HttpClient) { }
 

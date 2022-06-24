@@ -12,8 +12,8 @@ import { StructureFin } from '../models/structureFin.model';
   providedIn: 'root'
 })
 export class RapportService {
-  baseUrl: String = "http://localhost:8081/rapport";
-  baseUrlStructure: String = "http://localhost:8081/structure";
+  baseUrl: String = "http://desktop-25eprh3:8081/rapport";
+  baseUrlStructure: String = "http://desktop-25eprh3:8081/structure";
   jwtToken:any = localStorage.getItem('token');
   constructor(private http: HttpClient) { }
 

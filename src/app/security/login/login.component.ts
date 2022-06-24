@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  username!: any;
+  authuser:any;
   constructor(private authService:AuthentificationService,private router:Router) { }
 
   ngOnInit(): void {
@@ -27,11 +29,13 @@ export class LoginComponent implements OnInit {
   console.log(user);
     this.authService.login(user).subscribe(res=>{
       //alert('done');
+      this.authuser=res.body;
       let jwtToken = res.headers.get('Authorization');
       this.authService.saveToken(jwtToken);
-      localStorage.setItem('username',user.username);
+      this.username=this.authuser.username;
+      localStorage.setItem('username',this.username);
       localStorage.setItem('id',user.id);
-      console.log(jwtToken);
+      console.log(this.username);
     //  console.log(this.authService.isAuthenticated());
       this.router.navigateByUrl('/dashboard');
      

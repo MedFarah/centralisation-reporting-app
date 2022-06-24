@@ -37,10 +37,6 @@ import { StructureEnteteListComponent } from './structure/structure-entete-list/
 import { StructureEnteteAjoutComponent } from './structure/structure-entete-ajout/structure-entete-ajout.component';
 import { StructureEnteteModifComponent } from './structure/structure-entete-modif/structure-entete-modif.component';
 import { NgChartsModule } from 'ng2-charts';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { ApprobationDocumentListComponent } from './declarations/approbation-document-list/approbation-document-list.component';
@@ -66,6 +62,7 @@ import { AuthentificationService } from './services/authentification.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthInterceptor } from './services/auth.interceptor';
+
    
 
 
@@ -129,11 +126,10 @@ import { AuthInterceptor } from './services/auth.interceptor';
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
-    NgChartsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatFormFieldModule,
-    MatInputModule ,
+    NgChartsModule.forRoot({
+      defaults: {},
+      plugins: [  ]
+    }),
     BrowserAnimationsModule
   ],
   

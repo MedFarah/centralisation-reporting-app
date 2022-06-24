@@ -18,6 +18,9 @@ constructor(private route:Router,private authService:AuthentificationService){}
   ngOnInit(): void {
     this.logged=this.authService.isAuthenticated();
     this.username = localStorage.getItem('username');
+    this.loadScript('../assets/vendor/bootstrap/js/bootstrap.bundle.min.js');
+    this.loadScript('../assets/vendor/jquery-easing/jquery.easing.min.js');
+     this.loadScript('../assets/js/sb-admin-2.min.js');
   }
   logout(){
     localStorage.removeItem('token');
@@ -26,7 +29,8 @@ constructor(private route:Router,private authService:AuthentificationService){}
   }
 
   deleteProfile(){
-     this.id = localStorage.getItem('id');
+     this.id = localStorage.getItem('username');
+     console.log(this.id);
     Swal.fire({
       title: 'Are you sure?',
       text: 'This process is irreversible.',
@@ -36,16 +40,27 @@ constructor(private route:Router,private authService:AuthentificationService){}
       cancelButtonText: 'No, let me think',
     }).then((result) => {
       if (result.value) {
-        this.authService.deleteUser(this.id).subscribe(res=>{
+        this.authService.deleteUser(this.id,localStorage.getItem('token')).subscribe(res=>{
+          console.log(res);
           Swal.fire('Removed!', 'Profile removed successfully.', 'success').then((ress)=>{
             localStorage.removeItem('token');
             window.location.reload();});
         },err=>
-        {alert('something went wrong..')});
+        {alert('something went wrong..'+err)});
         
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire('Cancelled', 'profile still in our database.)', 'error');
       }
     });
+  }
+
+  public loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = url;
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
   }
 }

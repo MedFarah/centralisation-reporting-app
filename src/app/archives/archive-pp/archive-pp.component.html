@@ -65,11 +65,11 @@
                             <td *ngFor="let p of rapport.fin.codeErreurRapports"> {{ p.motif ?? "my value is null"}}
                             </td>
 
-                            <div class="row">
-                                <button class="btn btn-danger btn-sm col-md-6" (click)="DeleteRapportPP(rapport.id)">
+                            
+                                <button class="btn btn-danger btn-sm " (click)="DeleteRapportPP(rapport.id)">
                                     <i class="fas fa-trash"></i>
                                 </button>
-                                </div>
+                              
 
                         </tr>
 

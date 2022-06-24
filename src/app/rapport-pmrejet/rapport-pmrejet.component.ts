@@ -74,7 +74,7 @@ export class RapportPMRejetComponent implements OnInit {
             } else if (event instanceof HttpResponse) {
               this.message = event.body.responseMessage;
             }
-            Swal.fire('Hey', 'Success!', 'success');
+            Swal.fire('Hey', 'Success!', 'success').then(a=>window.location.reload());
             
           },
           (err: any) => {

@@ -50,6 +50,7 @@ export class RegisterComponent implements OnInit {
     if(this.addUserForm.valid){
       this.securityService.register(u).subscribe(res=>{
         alert('success');
+        this.route.navigateByUrl('/auth');
       },err=>{
         alert('server error');
       });

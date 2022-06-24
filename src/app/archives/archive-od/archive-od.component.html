@@ -65,11 +65,11 @@
                                     <td *ngIf="c==0">{{f.codeErreur  ?? "my value is null"}}</td>
                                     <td *ngIf="c==0"> {{f.motif ?? "my value is null"}}</td>
                                     <td>
-                                        <div class="row">
-                                            <button class="btn btn-danger btn-sm col-md-6" (click)="DeleteRapportOD(rapport.id)">
+                                        
+                                            <button class="btn btn-danger btn-sm " (click)="DeleteRapportOD(rapport.id)">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                            </div>
+                                           
                                     </td>
                         </ng-container>
                         </ng-container>

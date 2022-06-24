@@ -9,7 +9,7 @@ import { AppUser } from '../models/user.model';
 })
 export class AuthentificationService {
   private jwtToken!: string;
-  baseUrl: string = "http://localhost:8084";
+  baseUrl: string = "http://desktop-25eprh3:8084";
   constructor(private http: HttpClient,public jwtHelper: JwtHelperService) { }
 
 
@@ -40,8 +40,8 @@ export class AuthentificationService {
    return false ;
   }
 
-  deleteUser(id: string): Observable<any> {
-    return this.http.delete(this.baseUrl + '/users/' + id,{headers:new HttpHeaders({'authorization':this.jwtToken})});
+  deleteUser(id: string, token: any): Observable<any> {
+    return this.http.delete(this.baseUrl + '/users/' + id,{headers:new HttpHeaders({'authorization':token})});
   }
 
 }

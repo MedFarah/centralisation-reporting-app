@@ -83,12 +83,12 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRapports"
               aria-expanded="true" aria-controls="collapsePages">
               <i class="fas fa-fw fa-folder"></i>
               <span>Rejets</span>
           </a>
-          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div id="collapseRapports" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Rapports:</h6>
                   <a class="collapse-item" href="/rejet/rapportOD">Rejet 910</a>
@@ -104,17 +104,40 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseArchives"
+          aria-expanded="true" aria-controls="collapsePages">
               <i class="fas fa-fw fa-chart-area"></i>
-              <span>Charts</span></a>
+              <span>Archive</span></a>
+              <div id="collapseArchives" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Archive:</h6>
+                    <a class="collapse-item" href="/archiveOD">Archive OD</a>
+                    <a class="collapse-item" href="/archivePM">Archive PM</a>
+                    <a class="collapse-item" href="/archivePP">Archive PP</a>  
+                    
+                </div>
+            </div>
       </li>
-
+       <!-- Divider -->
+       <hr class="sidebar-divider">
+       <!-- Heading -->
+      <div class="sidebar-heading">
+        Profile
+    </div>
       <!-- Nav Item - Tables -->
+      <div class="text-center d-none d-md-inline">
       <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="" (click)="logout()">
               <i class="fas fa-fw fa-table"></i>
-              <span>Tables</span></a>
+              <span>Déconnexion</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link"   (click)="deleteProfile()">
+            <i class="fa fa-trash"></i>
+            <span> Supprimer votre profile?</span>
+        </a>
+      </li>
+    </div>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

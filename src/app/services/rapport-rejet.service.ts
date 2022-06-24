@@ -14,8 +14,8 @@ import { ArchiveRapportPM } from '../models/archiveRapportPM.model';
 })
 export class RapportRejetService {
 
-baseUrl: String ="http://localhost:8080/rejets";
-baseUrlArchive: String ="http://localhost:8080/";
+baseUrl: String ="http://desktop-25eprh3:8080/rejets";
+baseUrlArchive: String ="http://desktop-25eprh3:8080";
 jwtToken:any =localStorage.getItem('token');
   constructor(private http: HttpClient) { }
 

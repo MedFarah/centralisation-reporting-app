@@ -110,8 +110,8 @@
                             <td *ngIf="c==0">{{f.codeErreur  ?? "my value is null"}}</td>
                             <td *ngIf="c==0"> {{f.motif ?? "my value is null"}}</td>
                             <td>
-                                <button class="btn btn-info btn-circle btn-sm " (click)="ArchiverRapport(rapport.numeroDeclaration)">
-                                    <i class="fas fa-edit"></i>
+                                <button class="btn btn-danger btn-circle btn-sm " (click)="ArchiverRapport(rapport.numeroDeclaration)">
+                                    <i class="fas fa-trash"></i>
                                 </button>
                             </td>
                 </ng-container>
